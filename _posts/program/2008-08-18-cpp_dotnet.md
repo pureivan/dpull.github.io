@@ -21,22 +21,22 @@ tags: [c, .NET]
 C++类型（本机类型）和.NET Framework类型对应，
 在托管C++里面使用这些类型就相当于使用后面的.NET Framework类型。
 
-C++ 类型 								| .NET Framework 类型
----  									| --- 		
-bool 									| System.Boolean
-signed char								| System.SByte
-unsigned char                           | System.Byte
-unsigned char                           | System.Byte
-wchar_t                                 | System.Char
-double, long double                     | System.Double
-float                                   | System.Single
-int, signed int, long, signed long      | System.Int32
-unsigned int, unsigned long             | System.UInt32
-__int64, signed __int64                 | System.Int64
-unsigned __int64                        | System.UInt64
-short, signed short                     | System.Int16
-unsigned short                          | System.UInt16
-void                                    | System.Void
+	C++ 类型 								| .NET Framework 类型
+	---  									| --- 		
+	bool 									| System.Boolean
+	signed char								| System.SByte
+	unsigned char                           | System.Byte
+	unsigned char                           | System.Byte
+	wchar_t                                 | System.Char
+	double, long double                     | System.Double
+	float                                   | System.Single
+	int, signed int, long, signed long      | System.Int32
+	unsigned int, unsigned long             | System.UInt32
+	__int64, signed __int64                 | System.Int64
+	unsigned __int64                        | System.UInt64
+	short, signed short                     | System.Int16
+	unsigned short                          | System.UInt16
+	void                                    | System.Void
 
 
 ## 运算符^ ##
@@ -95,6 +95,7 @@ void                                    | System.Void
 值类型 声明为 value class 或 value struct
 
 继承，和C++的继承类似
+
 	{% highlight C++ %}
     public ref class PluginRunException : public Exception   
  	{    

@@ -7,6 +7,9 @@ pygments: true
 encoding: utf-8
 markdown: redcarpet
 
+redcarpet: 
+    extensions: ["tables"]
+
 title: dpull
 description: Stylish Jekyll Theme2
 author:
