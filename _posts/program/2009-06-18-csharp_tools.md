@@ -1,13 +1,11 @@
 ---
 layout: post
 title: 自备C#辅助函数
-categories: [general, c#, .NET]
-tags: [c#, .NET]
+categories: [General, DotNET]
+tags: [csharp]
 ---
 
 写程序久了，自然就有了自己的秘密兵器，今天就来分享几个常用的C#函数。
-
-----------
 
 ## 动态创建子类 ##
 

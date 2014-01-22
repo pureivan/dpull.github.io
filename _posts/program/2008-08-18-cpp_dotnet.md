@@ -1,16 +1,14 @@
 ---
 layout: post
 title: 轻松入门VC++.Net
-categories: [general, C, .NET]
-tags: [c, .NET]
+categories: [General, DotNET]
+tags: [c]
 ---
 
 网络上关于VC++.Net介绍的资料很少，经过一段时间的摸索，
 我初步了解了VC++.Net，本文就VC++.Net入门做一些简单介绍！
 
 **本文适用人群：** 了解C++语法，了解.NET类库。
-
-----------
 
 ## 为什么要使用托管C++？ ##
 

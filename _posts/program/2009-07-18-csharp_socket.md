@@ -1,13 +1,11 @@
 ---
 layout: post
 title: .NET Tcp/IP Socket使用二三事
-categories: [general, c#, .NET]
-tags: [c#, .NET]
+categories: [General, DotNET]
+tags: [csharp, socket]
 ---
 
 来公司后一直负责网络库部分,后来小项目需要用.net写一个网络库，就操刀写了一个，与公司网络库使用复杂的IOCP模型和epool相比，这个.net网络库我采用了最简单的select模型。
-
-----------
 
 ## 为了增加效率，可以考虑采用无异常的函数 ##
 在.net2.0中Socket.Send,Socket.Receive 有了无异常的函数，

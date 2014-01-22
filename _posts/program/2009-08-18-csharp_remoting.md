@@ -1,8 +1,8 @@
 ---
 layout: post
 title: .NET用Remoting实现进程间通信
-categories: [general, c#, .NET]
-tags: [c#, .NET]
+categories: [General, DotNET]
+tags: [csharp, remoting]
 ---
 
 用Remoting实现进程间通信，真的很简单、很好用。
@@ -10,8 +10,6 @@ tags: [c#, .NET]
 服务器端(exe)控制端(web)都是用.net写的，原本两者的通信想用Socket，毕竟我写了一个还蛮好用的网络库(自我陶醉~~)，但真的被协议所累，即使用序列化传输，也是要处理一大坨东西，偷偷懒，采用Remoting，为一不爽的地方是以前的设计是单线程，不用加锁，现在要在服务器端的主循环进行加锁，而且也不好控制控制端大量访问造成的压力，但需求决定，这个控制端不会有好多人用，所以是可行的。
 
 在决定采用这个方案后决定对Remoting进行一个简单的封装，目的是为了减少使用者的学习负担，也为了减少上层代码对这种机制的依赖（说不定哪天发现不符合需求就换掉!）
-
-----------
 
 **定义Server被web的基本操作的接口，我们定为IServerControl，里面只有一个Add方法。**
 	
