@@ -5,8 +5,8 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 pygments: true
 encoding: utf-8
+permalink: /:year/:month/:title/
 markdown: redcarpet
-
 redcarpet: 
     extensions: ["tables"]
 
