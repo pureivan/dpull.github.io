@@ -8,8 +8,9 @@ encoding: utf-8
 markdown: redcarpet
 redcarpet: 
     extensions: ["tables"]
-	
-excerpt_separator: "----------"
+
+#excerpt_separator: <!--more--> 
+excerpt_separator: ----------
 
 title: dpull
 description: Stylish Jekyll Theme2
