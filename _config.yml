@@ -26,7 +26,7 @@ rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 
-# BASE_PATH: http://dpull.github.io/
+BASE_PATH: http://dpull.com
 
 # All links will be namespaced by BASE_PATH if defined.
 # Links in your website should always be prefixed with {{ site.BASE_PATH }}
