@@ -13,6 +13,8 @@ tags: [Cocos2dx, CocosBuilder]
 > 若是策划不停地改设计，想死的心都有了。
 > 所以需要一个所见即所得的编辑器。
 
+----------
+
 ## 为什么选用CocosBuilder？ ##
 2013年4月：
 选用CocosBuilder遭到了我们特效同学和UI同学的反对，从windows转到mac上，各种不适应。

@@ -20,6 +20,8 @@ tags: [Cocos2dx]
 	{% endhighlight %}
         
 
+----------
+
 然后经过一番尝试和研究，简单记录一下CCLabelTTF关于字体方面的坑。
 
 1. 将ttf字体的英文名修改为字体名，不知道ttf字体的英文名，则先执行下一步，因为设置字体的英文名为文件名是为了支持CocosBuilder。
