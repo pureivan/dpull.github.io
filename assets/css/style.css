@@ -34,7 +34,6 @@ a.nav-link i{
 a.nav-link:hover { color: #777 }
 
 #bio {
-	font-family: “Microsoft YaHei”, “微软雅黑”, Courier, monospace;
 	font-size: 11px;
 	margin: 0 auto;
 	margin-bottom: 10px;
@@ -62,14 +61,20 @@ article{
 article.home div a, article.home pre a { color: #2c3e50; }
 article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
 article img { max-width: 100%; }
+article.home h2 {display : inline } 
+article.home h2 a{font-size: 1.5em; color: #ca7900;}
+article.home h2 a:hover{ color: #2491cf; display : inline }
 
-h1,h2,h3,h4,h5,h6{ font-family: “Microsoft YaHei”, “微软雅黑”, sans-serif; color: #5d86f2; }
+h1 { margin: 0; padding: 0.7em 0 0.3em 0; font-size: 1.5em; color: #11557C; }
+h2 { margin: 1.3em 0 0.2em 0; font-size: 1.35em; padding: 0; }
+h3 { margin: 1em 0 -0.3em 0; font-size: 1.2em; }
+/* 
+h1,h2,h3,h4,h5,h6{ color: #11557c; }
 h1 a,h2 a,h3 a,h4 a{ color: #5d86f2; }
 h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover{ color: #e74c3c; }
-
+*/
 footer {
 	padding-top: 15px;
-	font-family: “Microsoft YaHei”, “微软雅黑”;
 }
 
 /* nav-vertical-tabs component */
