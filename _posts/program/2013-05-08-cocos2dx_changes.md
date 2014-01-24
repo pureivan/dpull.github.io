@@ -5,15 +5,14 @@ categories: [General, Cocos2dx]
 tags: [Cocos2dx]
 ---
 
-**不满足需求的地方**
-
+## 不满足需求的地方 ##
 1. 增加extensions 的ios proj
 1. 修改触摸响应机制，简化为消息树。
 1. CCB关键帧回调改为Action（和James Chen聊了一下，他建议改为ND，但我认为ND是不安全的）
 
 ----------
 
-**bug**
+## bug ##
 1. 修复ccb动画管理器空指针访问（已合并）
 1. cb锚点位置（已合并）
 1. 解决了子节点初始隐藏然后显示，顺序错乱的bug

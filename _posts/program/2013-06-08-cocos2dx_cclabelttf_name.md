@@ -8,6 +8,7 @@ tags: [Cocos2dx]
 > 在地海世界，一个充满著岛屿、海洋、魔法的奇幻世界，万物皆有真名。而当知晓了某物／人之真名，便能成为其主人。 
 > *--《地海巫师》（A Wizard of Earthsea）*
 
+----------
 
 使用Cocosbuilder的时候，有使用UserFonts的选项，可以选择ttf文件，但是选择后在模拟器上没有效果，调试后发现了一个注释：
 
@@ -19,9 +20,6 @@ tags: [Cocos2dx]
 	// the '.ttf' extensions when referring to custom fonts.
 	{% endhighlight %}
         
-
-----------
-
 然后经过一番尝试和研究，简单记录一下CCLabelTTF关于字体方面的坑。
 
 1. 将ttf字体的英文名修改为字体名，不知道ttf字体的英文名，则先执行下一步，因为设置字体的英文名为文件名是为了支持CocosBuilder。
