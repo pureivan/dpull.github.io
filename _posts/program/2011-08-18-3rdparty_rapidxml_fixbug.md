@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 修复rapidxml对wchar_t支持的bug
-categories: [General, 3rdparty]
+categories: [general, 3rdparty]
 tags: [rapidxml]
 ---
 

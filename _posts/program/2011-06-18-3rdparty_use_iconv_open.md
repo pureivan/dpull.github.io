@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iconv对windows unicode支持的问题
-categories: [General, 3rdparty]
+categories: [general, 3rdparty]
 tags: [iconv]
 ---
 

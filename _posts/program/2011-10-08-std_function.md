@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 栈和函数调用
-categories: [General]
+categories: [general]
 tags: []
 ---
 

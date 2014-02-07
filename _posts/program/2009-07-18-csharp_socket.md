@@ -1,7 +1,7 @@
 ---
 layout: post
 title: .NET Tcp/IP Socket使用二三事
-categories: [General, DotNET]
+categories: [general, dotnet]
 tags: [csharp, socket]
 ---
 

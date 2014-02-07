@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sublime Text
-categories: [General]
+categories: [general]
 tags: []
 ---
 

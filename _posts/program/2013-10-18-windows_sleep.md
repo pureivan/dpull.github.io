@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Windows Sleep 函数
-categories: [General]
-tags: []
+categories: [general]
+tags: [windows]
 ---
 
 ## 问题： ##

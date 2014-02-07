@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 计算机科学箴言集
-categories: [General, Note]
+categories: [general, note]
 tags: []
 ---
 

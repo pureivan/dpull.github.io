@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Cocos2dx开发环境设置及常用操作
-categories: [General, Cocos2dx]
-tags: [Cocos2dx]
+categories: [general, cocos2dx]
+tags: [cocos2dx]
 ---
 
 以前一直开发端游，不熟悉ios和android的开发环境。

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 轻松入门VC++.Net
-categories: [General, DotNET]
+categories: [general, dotnet]
 tags: [c]
 ---
 

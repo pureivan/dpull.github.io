@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Console.Write写大量字符串异常
-categories: [General, DotNET]
-tags: [csharp, console]
+categories: [general, dotnet]
+tags: [csharp]
 ---
 
 Console.Write 大约写2G字符后就会抛出：

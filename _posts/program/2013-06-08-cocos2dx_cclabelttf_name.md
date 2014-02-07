@@ -1,8 +1,8 @@
 ---
 layout: post
 title: CCLabelTTF的字体名字
-categories: [General, Cocos2dx]
-tags: [Cocos2dx]
+categories: [general, cocos2dx]
+tags: [cocos2dx]
 ---
 
 > 在地海世界，一个充满著岛屿、海洋、魔法的奇幻世界，万物皆有真名。而当知晓了某物／人之真名，便能成为其主人。 

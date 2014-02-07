@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 常用字符集编码详解
-categories: [General, Note]
+categories: [general, note]
 tags: []
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: .NET用Remoting实现进程间通信
-categories: [General, DotNET]
+categories: [general, dotnet]
 tags: [csharp, remoting]
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: CocosBuilder使用和实现
-categories: [General, Cocos2dx]
-tags: [Cocos2dx, CocosBuilder]
+categories: [general, cocos2dx]
+tags: [cocos2dx, cocosbuilder]
 ---
 
 `CocosBuilder` 版本:3.0 Alpha X(2.1版本Publish的文件Cocos2dx2.1.1不支持)

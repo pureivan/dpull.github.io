@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 自备C#辅助函数
-categories: [General, DotNET]
+categories: [general, dotnet]
 tags: [csharp]
 ---
 

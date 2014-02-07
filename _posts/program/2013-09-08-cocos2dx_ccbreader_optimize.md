@@ -1,8 +1,8 @@
 ---
 layout: post
 title: cocos2d性能优化--CCB加载优化
-categories: [General, Cocos2dx]
-tags: [Cocos2dx]
+categories: [general, cocos2dx]
+tags: [cocos2dx]
 ---
 
 我们使用cocos2dx 2.2和CocosBuilder-3.0-alpha3配合开发卡牌游戏。

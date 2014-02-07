@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 无根的根：无名师的 Unix 心传
-categories: [General, Note]
+categories: [general, note]
 tags: []
 ---
 

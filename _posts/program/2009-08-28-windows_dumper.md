@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dumper重构总结
-categories: [General]
+categories: [general]
 tags: [windows]
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 对cocos2dx功能完善或者bug修复
-categories: [General, Cocos2dx]
-tags: [Cocos2dx]
+categories: [general, cocos2dx]
+tags: [cocos2dx]
 ---
 
 ## 不满足需求的地方 ##

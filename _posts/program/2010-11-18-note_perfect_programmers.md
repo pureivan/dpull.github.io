@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 完美程序员的10种品质
-categories: [General, Note]
+categories: [general, note]
 tags: []
 ---
 
