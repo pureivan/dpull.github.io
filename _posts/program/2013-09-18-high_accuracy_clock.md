@@ -6,6 +6,8 @@ tags: [Cocos2dx]
 ---
 
 整理自 [gperftools](http://code.google.com/p/gperftools/)
+
+----------
 	
 	{% highlight C++ %}
 	  #ifndef GOOGLE_BASE_CYCLECLOCK_H_
