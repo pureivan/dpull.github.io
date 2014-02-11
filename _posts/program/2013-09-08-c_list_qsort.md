@@ -6,7 +6,8 @@ tags: [c]
 ---
 
 ----------
-
+	
+	{% highlight c %}
     // 头文件
     #pragma once
 
@@ -60,3 +61,4 @@ tags: [c]
 
         return headNode.m_pNext;
     }
+	{% endhighlight %}

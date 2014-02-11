@@ -6,26 +6,27 @@ tags: [c]
 ---
 
 有一道思科的面试题
+		
+	{% highlight c %}
+    const int x = 5; 
+    int main() 
+    { 
+        int x = x; 
+        printf("%d\n",x); 
+        return 0; 
+    } 
+    // 输出是 1994628660 
+    // 随机结果 
 
-        const int x = 5; 
-        int main() 
-        { 
-            int x = x; 
-            printf("%d\n",x); 
-            return 0; 
-        } 
-        // 输出是 1994628660 
-        // 随机结果 
-
-        const int x = 5; 
-        int main() 
-        { 
-            int x[x]; 
-            printf("%d\n",sizeof(x)/sizeof(int)); 
-            return 0; 
-        } 
-        // 该题输出为 5. 
-        
+    const int x = 5; 
+    int main() 
+    { 
+        int x[x]; 
+        printf("%d\n",sizeof(x)/sizeof(int)); 
+        return 0; 
+    } 
+    // 该题输出为 5. 
+	{% endhighlight %}        
         
 
 这道题主要考查的是C++标准，Point of declaration一节
