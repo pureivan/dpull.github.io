@@ -15,5 +15,4 @@ excerpt_separator: ----------
 
 urls:
     - text: email
-      url: beingstudio@gmail.com
-	  
+      url: mailto:beingstudio@gmail.com
