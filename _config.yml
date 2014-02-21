@@ -2,7 +2,7 @@ name: dpull
 about: 这家伙很懒，什么都没留下。
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
-include: ["work/_static"]
+include: ["_static"]
 exclude: ["README.md"] # files to exclude
 pygments: true
 encoding: utf-8
