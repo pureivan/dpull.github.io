@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>客户端全局 &mdash; dpull 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="dpull 1.0 documentation" href="../index.html" />
+    <link rel="up" title="API" href="index.html" />
+    <link rel="next" title="ServerAgent" href="client_serveragent.html" />
+    <link rel="prev" title="共用全局" href="global.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="client_serveragent.html" title="ServerAgent"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="global.html" title="共用全局"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">API</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">客户端全局</a><ul>
+<li><a class="reference internal" href="#getuimgr">GetUIMgr</a></li>
+<li><a class="reference internal" href="#getserveragent">GetServerAgent</a></li>
+<li><a class="reference internal" href="#getuserstring">GetUserString</a></li>
+<li><a class="reference internal" href="#getusernumber">GetUserNumber</a></li>
+<li><a class="reference internal" href="#setuservalue">SetUserValue</a></li>
+<li><a class="reference internal" href="#messagebox">MessageBox</a></li>
+<li><a class="reference internal" href="#getplatform">GetPlatform</a></li>
+<li><a class="reference internal" href="#readfiledata">ReadFileData</a></li>
+<li><a class="reference internal" href="#writefiledata">WriteFileData</a></li>
+<li><a class="reference internal" href="#pushscene">PushScene</a></li>
+<li><a class="reference internal" href="#popscene">PopScene</a></li>
+<li><a class="reference internal" href="#poptorootscene">PopToRootScene</a></li>
+<li><a class="reference internal" href="#playbackgroundmusic">PlayBackgroundMusic</a></li>
+<li><a class="reference internal" href="#stopbackgroundmusic">StopBackgroundMusic</a></li>
+<li><a class="reference internal" href="#isbackgroundmusicplaying">IsBackgroundMusicPlaying</a></li>
+<li><a class="reference internal" href="#playsoundeffect">PlaySoundEffect</a></li>
+<li><a class="reference internal" href="#setbackgroundmusicvolume">SetBackgroundMusicVolume</a></li>
+<li><a class="reference internal" href="#getbackgroundmusicvolume">GetBackgroundMusicVolume</a></li>
+<li><a class="reference internal" href="#seteffectsvolume">SetEffectsVolume</a></li>
+<li><a class="reference internal" href="#geteffectsvolume">GetEffectsVolume</a></li>
+<li><a class="reference internal" href="#settimescale">SetTimeScale</a></li>
+<li><a class="reference internal" href="#loadfilterfile">LoadFilterFile</a></li>
+<li><a class="reference internal" href="#loadwhitelistfile">LoadWhiteListFile</a></li>
+<li><a class="reference internal" href="#checkfiltertext">CheckFilterText</a></li>
+<li><a class="reference internal" href="#replacefiltetext">ReplaceFilteText</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="global.html"
+                        title="previous chapter">共用全局</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="client_serveragent.html"
+                        title="next chapter">ServerAgent</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>客户端全局<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getuimgr">
+<h2>GetUIMgr<a class="headerlink" href="#getuimgr" title="Permalink to this headline">¶</a></h2>
+<p>获取UIMgr</p>
+</div>
+<div class="section" id="getserveragent">
+<h2>GetServerAgent<a class="headerlink" href="#getserveragent" title="Permalink to this headline">¶</a></h2>
+<p>获取ServerAgent</p>
+</div>
+<div class="section" id="getuserstring">
+<h2>GetUserString<a class="headerlink" href="#getuserstring" title="Permalink to this headline">¶</a></h2>
+<p>获取用户配置文件中字符串值</p>
+</div>
+<div class="section" id="getusernumber">
+<h2>GetUserNumber<a class="headerlink" href="#getusernumber" title="Permalink to this headline">¶</a></h2>
+<p>获取用户配置文件中的BOOL值</p>
+</div>
+<div class="section" id="setuservalue">
+<h2>SetUserValue<a class="headerlink" href="#setuservalue" title="Permalink to this headline">¶</a></h2>
+<p>设置用户配置文件中的值</p>
+</div>
+<div class="section" id="messagebox">
+<h2>MessageBox<a class="headerlink" href="#messagebox" title="Permalink to this headline">¶</a></h2>
+<p>系统MessageBox</p>
+</div>
+<div class="section" id="getplatform">
+<h2>GetPlatform<a class="headerlink" href="#getplatform" title="Permalink to this headline">¶</a></h2>
+<p>获取当前平台</p>
+</div>
+<div class="section" id="readfiledata">
+<h2>ReadFileData<a class="headerlink" href="#readfiledata" title="Permalink to this headline">¶</a></h2>
+<p>读某个文件</p>
+</div>
+<div class="section" id="writefiledata">
+<h2>WriteFileData<a class="headerlink" href="#writefiledata" title="Permalink to this headline">¶</a></h2>
+<p>写某个文件</p>
+</div>
+<div class="section" id="pushscene">
+<h2>PushScene<a class="headerlink" href="#pushscene" title="Permalink to this headline">¶</a></h2>
+<p>创建新场景</p>
+</div>
+<div class="section" id="popscene">
+<h2>PopScene<a class="headerlink" href="#popscene" title="Permalink to this headline">¶</a></h2>
+<p>弹出当前场景</p>
+</div>
+<div class="section" id="poptorootscene">
+<h2>PopToRootScene<a class="headerlink" href="#poptorootscene" title="Permalink to this headline">¶</a></h2>
+<p>弹出到根场景</p>
+</div>
+<div class="section" id="playbackgroundmusic">
+<h2>PlayBackgroundMusic<a class="headerlink" href="#playbackgroundmusic" title="Permalink to this headline">¶</a></h2>
+<p>播放指定的背景音乐</p>
+</div>
+<div class="section" id="stopbackgroundmusic">
+<h2>StopBackgroundMusic<a class="headerlink" href="#stopbackgroundmusic" title="Permalink to this headline">¶</a></h2>
+<p>停止当前播放的背景音乐</p>
+</div>
+<div class="section" id="isbackgroundmusicplaying">
+<h2>IsBackgroundMusicPlaying<a class="headerlink" href="#isbackgroundmusicplaying" title="Permalink to this headline">¶</a></h2>
+<p>是否正在播放背景音乐</p>
+</div>
+<div class="section" id="playsoundeffect">
+<h2>PlaySoundEffect<a class="headerlink" href="#playsoundeffect" title="Permalink to this headline">¶</a></h2>
+<p>播放指定的特效</p>
+</div>
+<div class="section" id="setbackgroundmusicvolume">
+<h2>SetBackgroundMusicVolume<a class="headerlink" href="#setbackgroundmusicvolume" title="Permalink to this headline">¶</a></h2>
+<p>设置背景音乐音量</p>
+</div>
+<div class="section" id="getbackgroundmusicvolume">
+<h2>GetBackgroundMusicVolume<a class="headerlink" href="#getbackgroundmusicvolume" title="Permalink to this headline">¶</a></h2>
+<p>获取背景音乐音量</p>
+</div>
+<div class="section" id="seteffectsvolume">
+<h2>SetEffectsVolume<a class="headerlink" href="#seteffectsvolume" title="Permalink to this headline">¶</a></h2>
+<p>设置特效音量</p>
+</div>
+<div class="section" id="geteffectsvolume">
+<h2>GetEffectsVolume<a class="headerlink" href="#geteffectsvolume" title="Permalink to this headline">¶</a></h2>
+<p>获取特效音量</p>
+</div>
+<div class="section" id="settimescale">
+<h2>SetTimeScale<a class="headerlink" href="#settimescale" title="Permalink to this headline">¶</a></h2>
+<p>设置客户端动画播放速度</p>
+</div>
+<div class="section" id="loadfilterfile">
+<h2>LoadFilterFile<a class="headerlink" href="#loadfilterfile" title="Permalink to this headline">¶</a></h2>
+<p>加载黑名单文件</p>
+</div>
+<div class="section" id="loadwhitelistfile">
+<h2>LoadWhiteListFile<a class="headerlink" href="#loadwhitelistfile" title="Permalink to this headline">¶</a></h2>
+<p>加载白名单文件</p>
+</div>
+<div class="section" id="checkfiltertext">
+<h2>CheckFilterText<a class="headerlink" href="#checkfiltertext" title="Permalink to this headline">¶</a></h2>
+<p>检查文字是否存在敏感词</p>
+</div>
+<div class="section" id="replacefiltetext">
+<h2>ReplaceFilteText<a class="headerlink" href="#replacefiltetext" title="Permalink to this headline">¶</a></h2>
+<p>替换存在的敏感词</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="client_serveragent.html" title="ServerAgent"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="global.html" title="共用全局"
+             >previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Acai.
+    </div>
+  </body>
+</html>

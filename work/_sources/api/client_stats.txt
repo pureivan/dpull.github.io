@@ -1,0 +1,92 @@
+StatsLib
+===============================
+                    
+SetRoleLevel           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+设置帐号等级 *SetRoleLevel* (*level*);
+
+   *level*       升级之后的等级     类型:int
+
+SetGameServer           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+设置区服 *SetGameServer* (*gameServer*)
+
+  *gameServer*      区服     类型:string
+
+MissionBegin           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+开始一项任务 *MissionBegin* (*missionId*);
+
+   *missionId*   任务名称    类型:string
+
+
+MissionCompleted           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+完成一项任务 *MissionCompleted* (missionId);
+
+   *missionId*   任务名称    类型:string
+
+MissionFailed           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+一项任务失败 *MissionFailed* (*missionId*, *failedCause*);
+
+   *missionId*   任务名称    类型:string
+
+   *failedCause* 失败原因    类型:string
+
+ChargeRequst           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+虚拟币充值请求 *ChargeRequst* (*orderId*, *iapId*, *currencyAmount*, *currencyType*, *virtualCurrencyAmount*, *paymentType*);
+  
+
+   *orderId*                 订 单id       类型:string
+
+   *iapId*                   充值包id      类型:string
+
+   *currencyAmount*          现金金额     类型:double
+
+   *currencyType*            币种         类型:string
+
+   *virtualCurrencyAmount*   虚拟币金额    类型:double
+
+   *paymentType*             支 付类型      类型:string
+
+ChargeSuccess           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+虚拟币充值请求 *ChargeSuccess* (*orderId*);
+
+   *orderId*                 订 单id       类型:string
+
+CoinReward           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+虚拟币赠送 *CoinReward* (*virtualCurrencyAmount*, *reason*);
+
+  *virtualCurrencyAmount*   虚拟币金额         类型:double
+
+  *reason*                  赠送虚拟币的原因    类型:string
+
+ItemPurchase           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+虚拟物品购买 *ItemPurchase* (*item*, *number*, *price*);
+
+   *item*          道具          类型:string
+
+   *number*        道具个数       类型:int
+
+   *price*         道具单价       类型:double
+
+ItemUse           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+虚拟物品消耗 *ItemUse* (*item*, *number*);
+
+   *item*        道具          类型:string
+
+   *number*      道具个数       类型:int
+
+CustomEvent           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+自定义事件  *CustomEvent* (*eventId*, *eventData*);
+
+	*eventId*     事件id          类型:string
+
+	*eventData*   数据            类型:table (只能一层)

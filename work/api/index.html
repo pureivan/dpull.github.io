@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>API &mdash; dpull 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="dpull 1.0 documentation" href="../index.html" />
+    <link rel="next" title="共用全局" href="global.html" />
+    <link rel="prev" title="10. 结束语" href="../google-styleguide/end.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="global.html" title="共用全局"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../google-styleguide/end.html" title="10. 结束语"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../google-styleguide/end.html"
+                        title="previous chapter">10. 结束语</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="global.html"
+                        title="next chapter">共用全局</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<p id="luna-api"><strong>下一版本修订计划</strong></p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>统一为世界坐标系以减少坐标系转换的概念，如增加 GetWorldPosition 和 SetWorldPosition函数，但是：</dt>
+<dd><ol class="first last arabic simple">
+<li>没有加入CCScene的节点设置的坐标是不正确的</li>
+<li>更改父节点后是否要自动修改坐标</li>
+<li>没有办法和Action结合起来，很鸡肋</li>
+<li>至今没考虑到，没有实际应用的场景</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p class="first">删除或者调整部分接口的位置</p>
+</li>
+<li><p class="first">重新设计需要回调的方法的注册</p>
+</li>
+</ol>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="global.html">共用全局</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="global.html#log">Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#loadtablefile">LoadTableFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#loadinifile">LoadIniFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#getfilemodifytime">GetFileModifyTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#getrandomdata">GetRandomData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#setrandomseed">SetRandomSeed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#random">Random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#gettickcount">GetTickCount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#getwidecharfromutf8">GetWideCharFromUTF8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#getutf8fromwidechar">GetUTF8FromWideChar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global.html#getstringmd5">GetStringMD5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_global.html">客户端全局</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#getuimgr">GetUIMgr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#getserveragent">GetServerAgent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#getuserstring">GetUserString</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#getusernumber">GetUserNumber</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#setuservalue">SetUserValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#messagebox">MessageBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#getplatform">GetPlatform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#readfiledata">ReadFileData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#writefiledata">WriteFileData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#pushscene">PushScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#popscene">PopScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#poptorootscene">PopToRootScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#playbackgroundmusic">PlayBackgroundMusic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#stopbackgroundmusic">StopBackgroundMusic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#isbackgroundmusicplaying">IsBackgroundMusicPlaying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#playsoundeffect">PlaySoundEffect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#setbackgroundmusicvolume">SetBackgroundMusicVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#getbackgroundmusicvolume">GetBackgroundMusicVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#seteffectsvolume">SetEffectsVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#geteffectsvolume">GetEffectsVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#settimescale">SetTimeScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#loadfilterfile">LoadFilterFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#loadwhitelistfile">LoadWhiteListFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#checkfiltertext">CheckFilterText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_global.html#replacefiltetext">ReplaceFilteText</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_serveragent.html">ServerAgent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_serveragent.html#connect">Connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_serveragent.html#close">Close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_serveragent.html#call">Call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_serveragent.html#setdisplaystats">SetDisplayStats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_uimgr.html">UIMgr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_uimgr.html#enablegesture">EnableGesture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_uimgr.html#enableshake">EnableShake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_uimgr.html#loadccbfile">LoadCCBFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_uimgr.html#loadccbdata">LoadCCBData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_uimgr.html#getrootpanel">GetRootPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_uimgr.html#traversalpanel">TraversalPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_panel.html">Panel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#getcontentsize">GetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#setcontentsize">SetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#getposition">GetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#setposition">SetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#getscale">GetScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#setscale">SetScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#getrotation">GetRotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#setrotation">SetRotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#setvisible">SetVisible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#setanchorpoint">SetAnchorPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#addchildpanel">AddChildPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#removeallchildren">RemoveAllChildren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#removefromparent">RemoveFromParent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#getchildren">GetChildren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#runanimations">RunAnimations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#runaction">RunAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#enableanimationcallback">EnableAnimationCallback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#converttoworldspace">ConvertToWorldSpace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#converttonodespace">ConvertToNodeSpace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#converttoparentnodespace">ConvertToParentNodeSpace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#isworldpointinside">IsWorldPointInside</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#getzorder">GetZOrder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#setzorder">SetZOrder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#settouchenabled">SetTouchEnabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#schedule">Schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#retain">Retain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#release">Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_panel.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_tableview.html">TableView</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#refresh">Refresh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#getcontainer">GetContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#setverticalfillorder">SetVerticalFillOrder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#getverticalfillorder">GetVerticalFillOrder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#insertcellatindex">InsertCellAtIndex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#updatecellatindex">UpdateCellAtIndex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#removecellatindex">RemoveCellAtIndex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#getviewsize">GetViewSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#getcontentsize">GetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#setcontentsize">SetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#getcontentoffset">GetContentOffset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#setcontentoffset">SetContentOffset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#getoffsetfromindex">GetOffsetFromIndex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tableview.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_scrollpage.html">ScrollPage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollpage.html#refresh">Refresh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollpage.html#selectpage">SelectPage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollpage.html#getviewsize">GetViewSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollpage.html#getcurrentpage">GetCurrentPage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollpage.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_labelbmfont.html">LabelBMFont</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_labelbmfont.html#setfontfile">SetFontFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelbmfont.html#gettext">GetText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelbmfont.html#settext">SetText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelbmfont.html#setvisible">SetVisible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelbmfont.html#setcolor">SetColor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelbmfont.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_labelttf.html">LabelTTF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#gettext">GetText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#settext">SetText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#setvisible">SetVisible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#setcolor">SetColor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#enableshadow">EnableShadow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#disableshadow">DisableShadow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#enablestroke">EnableStroke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#disablestroke">DisableStroke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#setfontfillcolor">SetFontFillColor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#getrootpanel">GetRootPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_labelttf.html#bedgeenhance">bEdgeEnhance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_menu.html">MenuItemImage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_menu.html#setnormalspriteframe">SetNormalSpriteFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_menu.html#setselectedspriteframe">SetSelectedSpriteFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_menu.html#setdisabledspriteframe">SetDisabledSpriteFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_menu.html#setvisible">SetVisible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_menu.html#selected">Selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_menu.html#unselected">Unselected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_menu.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_controlbutton.html">ControlButton</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_controlbutton.html#setbackgroundspriteforstate">SetBackgroundSpriteForState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_controlbutton.html#settitleforstate">SetTitleForState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_controlbutton.html#getposition">GetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_controlbutton.html#setposition">SetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_controlbutton.html#setenabled">SetEnabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_controlbutton.html#isenabled">IsEnabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_controlbutton.html#setvisible">SetVisible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_controlbutton.html#sethighlighted">SetHighlighted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_controlbutton.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_editbox.html">EditBox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_editbox.html#setinputmode">SetInputMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_editbox.html#setinputflag">SetInputFlag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_editbox.html#setreturntype">SetReturnType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_editbox.html#setmaxlength">SetMaxLength</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_editbox.html#settext">SetText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_editbox.html#gettext">GetText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_editbox.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_sprite.html">Sprite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#setvisible">SetVisible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#settexture">SetTexture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#setcolor">SetColor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#setrotation">SetRotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#getscale">GetScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#setscale">SetScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#getposition">GetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#setposition">SetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#getcontentsize">GetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#gettexturerect">GetTextureRect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#settexturerect">SetTextureRect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#runaction">RunAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_sprite.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_node.html">Node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#getcontentsize">GetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#setcontentsize">SetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#getposition">GetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#setposition">SetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#setrotation">SetRotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#setvisible">SetVisible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#addchildpanel">AddChildPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#removeallchildren">RemoveAllChildren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#getscale">GetScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#runaction">RunAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_node.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_layer.html">Layer 相关</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_layer.html#id1">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_layer.html#layercolor">LayerColor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_layer.html#layergradient">LayerGradient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_scrollview.html">ScrollView</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#getviewsize">GetViewSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#setvisible">SetVisible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#getcontentsize">GetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#setcontentsize">SetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#getcontentoffset">GetContentOffset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#setcontentoffset">SetContentOffset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#getcontainer">GetContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#addchildpanel">AddChildPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#getdirection">GetDirection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scrollview.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_textbox.html">TextBox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_textbox.html#newline">NewLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_textbox.html#addtext">AddText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_textbox.html#addimage">AddImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_textbox.html#clear">Clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_textbox.html#recover">Recover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_textbox.html#setfont">SetFont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_textbox.html#setfontsize">SetFontSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_textbox.html#setlineinterval">SetLineInterval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_textbox.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_webview.html">WebView</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_webview.html#navigate">Navigate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_webview.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_scale9sprite.html">Scale9Sprite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_scale9sprite.html#setvisible">SetVisible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scale9sprite.html#setcontentsize">SetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scale9sprite.html#getcontentsize">GetContentSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_scale9sprite.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_particle.html">ParticleSystemQuad</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_particle.html#setpositiontype">SetPositionType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_particle.html#setangle">SetAngle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_particle.html#setrotation">SetRotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_particle.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_rendertexture.html">RenderTexture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_rendertexture.html#setdrawmode">SetDrawMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_rendertexture.html#getposition">GetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_rendertexture.html#setposition">SetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_rendertexture.html#setopacity">SetOpacity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_rendertexture.html#setcolor">SetColor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_rendertexture.html#clear">Clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_rendertexture.html#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_stats.html">StatsLib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#setrolelevel">SetRoleLevel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#setgameserver">SetGameServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#missionbegin">MissionBegin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#missioncompleted">MissionCompleted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#missionfailed">MissionFailed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#chargerequst">ChargeRequst</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#chargesuccess">ChargeSuccess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#coinreward">CoinReward</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#itempurchase">ItemPurchase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#itemuse">ItemUse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_stats.html#customevent">CustomEvent</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><em>更新日期：2013/12/11</em></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="global.html" title="共用全局"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../google-styleguide/end.html" title="10. 结束语"
+             >previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Acai.
+    </div>
+  </body>
+</html>

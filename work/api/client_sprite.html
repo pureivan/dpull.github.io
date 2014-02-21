@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sprite &mdash; dpull 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="dpull 1.0 documentation" href="../index.html" />
+    <link rel="up" title="API" href="index.html" />
+    <link rel="next" title="Node" href="client_node.html" />
+    <link rel="prev" title="EditBox" href="client_editbox.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="client_node.html" title="Node"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="client_editbox.html" title="EditBox"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">API</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sprite</a><ul>
+<li><a class="reference internal" href="#setvisible">SetVisible</a></li>
+<li><a class="reference internal" href="#settexture">SetTexture</a></li>
+<li><a class="reference internal" href="#setcolor">SetColor</a></li>
+<li><a class="reference internal" href="#setrotation">SetRotation</a></li>
+<li><a class="reference internal" href="#getscale">GetScale</a></li>
+<li><a class="reference internal" href="#setscale">SetScale</a></li>
+<li><a class="reference internal" href="#getposition">GetPosition</a></li>
+<li><a class="reference internal" href="#setposition">SetPosition</a></li>
+<li><a class="reference internal" href="#getcontentsize">GetContentSize</a></li>
+<li><a class="reference internal" href="#gettexturerect">GetTextureRect</a></li>
+<li><a class="reference internal" href="#settexturerect">SetTextureRect</a></li>
+<li><a class="reference internal" href="#runaction">RunAction</a></li>
+<li><a class="reference internal" href="#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="client_editbox.html"
+                        title="previous chapter">EditBox</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="client_node.html"
+                        title="next chapter">Node</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sprite">
+<h1>Sprite<a class="headerlink" href="#sprite" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setvisible">
+<h2>SetVisible<a class="headerlink" href="#setvisible" title="Permalink to this headline">¶</a></h2>
+<p>设置是否显示</p>
+</div>
+<div class="section" id="settexture">
+<h2>SetTexture<a class="headerlink" href="#settexture" title="Permalink to this headline">¶</a></h2>
+<p>设置图片路径</p>
+</div>
+<div class="section" id="setcolor">
+<h2>SetColor<a class="headerlink" href="#setcolor" title="Permalink to this headline">¶</a></h2>
+<p>设置颜色</p>
+</div>
+<div class="section" id="setrotation">
+<h2>SetRotation<a class="headerlink" href="#setrotation" title="Permalink to this headline">¶</a></h2>
+<p>设置控件旋转的弧度</p>
+</div>
+<div class="section" id="getscale">
+<h2>GetScale<a class="headerlink" href="#getscale" title="Permalink to this headline">¶</a></h2>
+<p>获取缩放的比例</p>
+</div>
+<div class="section" id="setscale">
+<h2>SetScale<a class="headerlink" href="#setscale" title="Permalink to this headline">¶</a></h2>
+<p>设置缩放的比例</p>
+</div>
+<div class="section" id="getposition">
+<h2>GetPosition<a class="headerlink" href="#getposition" title="Permalink to this headline">¶</a></h2>
+<p>获取相对于父控件的位置</p>
+</div>
+<div class="section" id="setposition">
+<h2>SetPosition<a class="headerlink" href="#setposition" title="Permalink to this headline">¶</a></h2>
+<p>设置相对于父控件的位置</p>
+</div>
+<div class="section" id="getcontentsize">
+<h2>GetContentSize<a class="headerlink" href="#getcontentsize" title="Permalink to this headline">¶</a></h2>
+<p>获取控件大小</p>
+</div>
+<div class="section" id="gettexturerect">
+<h2>GetTextureRect<a class="headerlink" href="#gettexturerect" title="Permalink to this headline">¶</a></h2>
+<p>获取图片显示范围</p>
+</div>
+<div class="section" id="settexturerect">
+<h2>SetTextureRect<a class="headerlink" href="#settexturerect" title="Permalink to this headline">¶</a></h2>
+<p>设置图片显示范围</p>
+</div>
+<div class="section" id="runaction">
+<h2>RunAction<a class="headerlink" href="#runaction" title="Permalink to this headline">¶</a></h2>
+<p>执行动作</p>
+</div>
+<div class="section" id="getrootpanel">
+<h2>GetRootPanel<a class="headerlink" href="#getrootpanel" title="Permalink to this headline">¶</a></h2>
+<p>获取控件所在的Panel</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="client_node.html" title="Node"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="client_editbox.html" title="EditBox"
+             >previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Acai.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Panel &mdash; dpull 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="dpull 1.0 documentation" href="../index.html" />
+    <link rel="up" title="API" href="index.html" />
+    <link rel="next" title="TableView" href="client_tableview.html" />
+    <link rel="prev" title="UIMgr" href="client_uimgr.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="client_tableview.html" title="TableView"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="client_uimgr.html" title="UIMgr"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">API</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Panel</a><ul>
+<li><a class="reference internal" href="#getcontentsize">GetContentSize</a></li>
+<li><a class="reference internal" href="#setcontentsize">SetContentSize</a></li>
+<li><a class="reference internal" href="#getposition">GetPosition</a></li>
+<li><a class="reference internal" href="#setposition">SetPosition</a></li>
+<li><a class="reference internal" href="#getscale">GetScale</a></li>
+<li><a class="reference internal" href="#setscale">SetScale</a></li>
+<li><a class="reference internal" href="#getrotation">GetRotation</a></li>
+<li><a class="reference internal" href="#setrotation">SetRotation</a></li>
+<li><a class="reference internal" href="#setvisible">SetVisible</a></li>
+<li><a class="reference internal" href="#setanchorpoint">SetAnchorPoint</a></li>
+<li><a class="reference internal" href="#addchildpanel">AddChildPanel</a></li>
+<li><a class="reference internal" href="#removeallchildren">RemoveAllChildren</a></li>
+<li><a class="reference internal" href="#removefromparent">RemoveFromParent</a></li>
+<li><a class="reference internal" href="#getchildren">GetChildren</a></li>
+<li><a class="reference internal" href="#runanimations">RunAnimations</a></li>
+<li><a class="reference internal" href="#runaction">RunAction</a></li>
+<li><a class="reference internal" href="#enableanimationcallback">EnableAnimationCallback</a></li>
+<li><a class="reference internal" href="#converttoworldspace">ConvertToWorldSpace</a></li>
+<li><a class="reference internal" href="#converttonodespace">ConvertToNodeSpace</a></li>
+<li><a class="reference internal" href="#converttoparentnodespace">ConvertToParentNodeSpace</a></li>
+<li><a class="reference internal" href="#isworldpointinside">IsWorldPointInside</a></li>
+<li><a class="reference internal" href="#getzorder">GetZOrder</a></li>
+<li><a class="reference internal" href="#setzorder">SetZOrder</a></li>
+<li><a class="reference internal" href="#settouchenabled">SetTouchEnabled</a></li>
+<li><a class="reference internal" href="#schedule">Schedule</a></li>
+<li><a class="reference internal" href="#retain">Retain</a></li>
+<li><a class="reference internal" href="#release">Release</a></li>
+<li><a class="reference internal" href="#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="client_uimgr.html"
+                        title="previous chapter">UIMgr</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="client_tableview.html"
+                        title="next chapter">TableView</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="panel">
+<h1>Panel<a class="headerlink" href="#panel" title="Permalink to this headline">¶</a></h1>
+<p>在cocosbuilder中将根layer设置 <strong>Custom class</strong> 为XPanel</p>
+<p><strong>Doc root var</strong>:对应的变量为脚本名，如设为home，则对应scripts/home.lua</p>
+<div class="section" id="getcontentsize">
+<h2>GetContentSize<a class="headerlink" href="#getcontentsize" title="Permalink to this headline">¶</a></h2>
+<p>获取控件的大小</p>
+<blockquote>
+<div><div class="highlight-lua"><div class="highlight"><pre><span class="kd">local</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">panel</span><span class="p">.</span><span class="n">GetContentSize</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="setcontentsize">
+<h2>SetContentSize<a class="headerlink" href="#setcontentsize" title="Permalink to this headline">¶</a></h2>
+<p>设置控件的大小</p>
+<blockquote>
+<div><div class="highlight-lua"><div class="highlight"><pre><span class="n">panel</span><span class="p">.</span><span class="n">SetContentSize</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="getposition">
+<h2>GetPosition<a class="headerlink" href="#getposition" title="Permalink to this headline">¶</a></h2>
+<p>获取相对于父控件的位置</p>
+</div>
+<div class="section" id="setposition">
+<h2>SetPosition<a class="headerlink" href="#setposition" title="Permalink to this headline">¶</a></h2>
+<p>设置相对于父控件的位置</p>
+</div>
+<div class="section" id="getscale">
+<h2>GetScale<a class="headerlink" href="#getscale" title="Permalink to this headline">¶</a></h2>
+<p>获取缩放的比例</p>
+</div>
+<div class="section" id="setscale">
+<h2>SetScale<a class="headerlink" href="#setscale" title="Permalink to this headline">¶</a></h2>
+<p>设置缩放的比例</p>
+</div>
+<div class="section" id="getrotation">
+<h2>GetRotation<a class="headerlink" href="#getrotation" title="Permalink to this headline">¶</a></h2>
+<p>设置控件旋转的弧度</p>
+</div>
+<div class="section" id="setrotation">
+<h2>SetRotation<a class="headerlink" href="#setrotation" title="Permalink to this headline">¶</a></h2>
+<p>获取控件旋转的弧度</p>
+</div>
+<div class="section" id="setvisible">
+<h2>SetVisible<a class="headerlink" href="#setvisible" title="Permalink to this headline">¶</a></h2>
+<p>设置是否显示</p>
+</div>
+<div class="section" id="setanchorpoint">
+<h2>SetAnchorPoint<a class="headerlink" href="#setanchorpoint" title="Permalink to this headline">¶</a></h2>
+<p>设置是否锚点</p>
+</div>
+<div class="section" id="addchildpanel">
+<h2>AddChildPanel<a class="headerlink" href="#addchildpanel" title="Permalink to this headline">¶</a></h2>
+<p>增加子Panel</p>
+</div>
+<div class="section" id="removeallchildren">
+<h2>RemoveAllChildren<a class="headerlink" href="#removeallchildren" title="Permalink to this headline">¶</a></h2>
+<p>删除所有的子控件</p>
+</div>
+<div class="section" id="removefromparent">
+<h2>RemoveFromParent<a class="headerlink" href="#removefromparent" title="Permalink to this headline">¶</a></h2>
+<p>从父亲控件上删除自己</p>
+</div>
+<div class="section" id="getchildren">
+<h2>GetChildren<a class="headerlink" href="#getchildren" title="Permalink to this headline">¶</a></h2>
+<p>获取所有的子Panel</p>
+</div>
+<div class="section" id="runanimations">
+<h2>RunAnimations<a class="headerlink" href="#runanimations" title="Permalink to this headline">¶</a></h2>
+<p>播放指定的动画</p>
+</div>
+<div class="section" id="runaction">
+<h2>RunAction<a class="headerlink" href="#runaction" title="Permalink to this headline">¶</a></h2>
+<p>执行动作</p>
+</div>
+<div class="section" id="enableanimationcallback">
+<h2>EnableAnimationCallback<a class="headerlink" href="#enableanimationcallback" title="Permalink to this headline">¶</a></h2>
+<p>设置是否启用动画播放后回调</p>
+</div>
+<div class="section" id="converttoworldspace">
+<h2>ConvertToWorldSpace<a class="headerlink" href="#converttoworldspace" title="Permalink to this headline">¶</a></h2>
+<p>将自身坐标转化为世界坐标</p>
+</div>
+<div class="section" id="converttonodespace">
+<h2>ConvertToNodeSpace<a class="headerlink" href="#converttonodespace" title="Permalink to this headline">¶</a></h2>
+<p>将世界坐标转化为自身坐标</p>
+</div>
+<div class="section" id="converttoparentnodespace">
+<h2>ConvertToParentNodeSpace<a class="headerlink" href="#converttoparentnodespace" title="Permalink to this headline">¶</a></h2>
+<p>将自身坐标转化为父控件坐标</p>
+</div>
+<div class="section" id="isworldpointinside">
+<h2>IsWorldPointInside<a class="headerlink" href="#isworldpointinside" title="Permalink to this headline">¶</a></h2>
+<p>是否某个世界坐标在控件内</p>
+</div>
+<div class="section" id="getzorder">
+<h2>GetZOrder<a class="headerlink" href="#getzorder" title="Permalink to this headline">¶</a></h2>
+<p>获取Z序</p>
+</div>
+<div class="section" id="setzorder">
+<h2>SetZOrder<a class="headerlink" href="#setzorder" title="Permalink to this headline">¶</a></h2>
+<p>设置Z序</p>
+</div>
+<div class="section" id="settouchenabled">
+<h2>SetTouchEnabled<a class="headerlink" href="#settouchenabled" title="Permalink to this headline">¶</a></h2>
+<p>设置是否可点击</p>
+</div>
+<div class="section" id="schedule">
+<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">¶</a></h2>
+<p>设置定时期</p>
+</div>
+<div class="section" id="retain">
+<h2>Retain<a class="headerlink" href="#retain" title="Permalink to this headline">¶</a></h2>
+<p>增加引用计数</p>
+</div>
+<div class="section" id="release">
+<h2>Release<a class="headerlink" href="#release" title="Permalink to this headline">¶</a></h2>
+<p>减少引用计数</p>
+</div>
+<div class="section" id="getrootpanel">
+<h2>GetRootPanel<a class="headerlink" href="#getrootpanel" title="Permalink to this headline">¶</a></h2>
+<p>获取控件所在的Panel</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="client_tableview.html" title="TableView"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="client_uimgr.html" title="UIMgr"
+             >previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Acai.
+    </div>
+  </body>
+</html>

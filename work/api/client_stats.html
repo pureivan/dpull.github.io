@@ -1,0 +1,201 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>StatsLib &mdash; dpull 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="dpull 1.0 documentation" href="../index.html" />
+    <link rel="up" title="API" href="index.html" />
+    <link rel="prev" title="RenderTexture" href="client_rendertexture.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="client_rendertexture.html" title="RenderTexture"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">API</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">StatsLib</a><ul>
+<li><a class="reference internal" href="#setrolelevel">SetRoleLevel</a></li>
+<li><a class="reference internal" href="#setgameserver">SetGameServer</a></li>
+<li><a class="reference internal" href="#missionbegin">MissionBegin</a></li>
+<li><a class="reference internal" href="#missioncompleted">MissionCompleted</a></li>
+<li><a class="reference internal" href="#missionfailed">MissionFailed</a></li>
+<li><a class="reference internal" href="#chargerequst">ChargeRequst</a></li>
+<li><a class="reference internal" href="#chargesuccess">ChargeSuccess</a></li>
+<li><a class="reference internal" href="#coinreward">CoinReward</a></li>
+<li><a class="reference internal" href="#itempurchase">ItemPurchase</a></li>
+<li><a class="reference internal" href="#itemuse">ItemUse</a></li>
+<li><a class="reference internal" href="#customevent">CustomEvent</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="client_rendertexture.html"
+                        title="previous chapter">RenderTexture</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="statslib">
+<h1>StatsLib<a class="headerlink" href="#statslib" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setrolelevel">
+<h2>SetRoleLevel<a class="headerlink" href="#setrolelevel" title="Permalink to this headline">¶</a></h2>
+<p>设置帐号等级 <em>SetRoleLevel</em> (<em>level</em>);</p>
+<blockquote>
+<div><em>level</em>       升级之后的等级     类型:int</div></blockquote>
+</div>
+<div class="section" id="setgameserver">
+<h2>SetGameServer<a class="headerlink" href="#setgameserver" title="Permalink to this headline">¶</a></h2>
+<p>设置区服 <em>SetGameServer</em> (<em>gameServer</em>)</p>
+<blockquote>
+<div><em>gameServer</em>      区服     类型:string</div></blockquote>
+</div>
+<div class="section" id="missionbegin">
+<h2>MissionBegin<a class="headerlink" href="#missionbegin" title="Permalink to this headline">¶</a></h2>
+<p>开始一项任务 <em>MissionBegin</em> (<em>missionId</em>);</p>
+<blockquote>
+<div><em>missionId</em>   任务名称    类型:string</div></blockquote>
+</div>
+<div class="section" id="missioncompleted">
+<h2>MissionCompleted<a class="headerlink" href="#missioncompleted" title="Permalink to this headline">¶</a></h2>
+<p>完成一项任务 <em>MissionCompleted</em> (missionId);</p>
+<blockquote>
+<div><em>missionId</em>   任务名称    类型:string</div></blockquote>
+</div>
+<div class="section" id="missionfailed">
+<h2>MissionFailed<a class="headerlink" href="#missionfailed" title="Permalink to this headline">¶</a></h2>
+<p>一项任务失败 <em>MissionFailed</em> (<em>missionId</em>, <em>failedCause</em>);</p>
+<blockquote>
+<div><p><em>missionId</em>   任务名称    类型:string</p>
+<p><em>failedCause</em> 失败原因    类型:string</p>
+</div></blockquote>
+</div>
+<div class="section" id="chargerequst">
+<h2>ChargeRequst<a class="headerlink" href="#chargerequst" title="Permalink to this headline">¶</a></h2>
+<p>虚拟币充值请求 <em>ChargeRequst</em> (<em>orderId</em>, <em>iapId</em>, <em>currencyAmount</em>, <em>currencyType</em>, <em>virtualCurrencyAmount</em>, <em>paymentType</em>);</p>
+<blockquote>
+<div><p><em>orderId</em>                 订 单id       类型:string</p>
+<p><em>iapId</em>                   充值包id      类型:string</p>
+<p><em>currencyAmount</em>          现金金额     类型:double</p>
+<p><em>currencyType</em>            币种         类型:string</p>
+<p><em>virtualCurrencyAmount</em>   虚拟币金额    类型:double</p>
+<p><em>paymentType</em>             支 付类型      类型:string</p>
+</div></blockquote>
+</div>
+<div class="section" id="chargesuccess">
+<h2>ChargeSuccess<a class="headerlink" href="#chargesuccess" title="Permalink to this headline">¶</a></h2>
+<p>虚拟币充值请求 <em>ChargeSuccess</em> (<em>orderId</em>);</p>
+<blockquote>
+<div><em>orderId</em>                 订 单id       类型:string</div></blockquote>
+</div>
+<div class="section" id="coinreward">
+<h2>CoinReward<a class="headerlink" href="#coinreward" title="Permalink to this headline">¶</a></h2>
+<p>虚拟币赠送 <em>CoinReward</em> (<em>virtualCurrencyAmount</em>, <em>reason</em>);</p>
+<blockquote>
+<div><p><em>virtualCurrencyAmount</em>   虚拟币金额         类型:double</p>
+<p><em>reason</em>                  赠送虚拟币的原因    类型:string</p>
+</div></blockquote>
+</div>
+<div class="section" id="itempurchase">
+<h2>ItemPurchase<a class="headerlink" href="#itempurchase" title="Permalink to this headline">¶</a></h2>
+<p>虚拟物品购买 <em>ItemPurchase</em> (<em>item</em>, <em>number</em>, <em>price</em>);</p>
+<blockquote>
+<div><p><em>item</em>          道具          类型:string</p>
+<p><em>number</em>        道具个数       类型:int</p>
+<p><em>price</em>         道具单价       类型:double</p>
+</div></blockquote>
+</div>
+<div class="section" id="itemuse">
+<h2>ItemUse<a class="headerlink" href="#itemuse" title="Permalink to this headline">¶</a></h2>
+<p>虚拟物品消耗 <em>ItemUse</em> (<em>item</em>, <em>number</em>);</p>
+<blockquote>
+<div><p><em>item</em>        道具          类型:string</p>
+<p><em>number</em>      道具个数       类型:int</p>
+</div></blockquote>
+</div>
+<div class="section" id="customevent">
+<h2>CustomEvent<a class="headerlink" href="#customevent" title="Permalink to this headline">¶</a></h2>
+<p>自定义事件  <em>CustomEvent</em> (<em>eventId</em>, <em>eventData</em>);</p>
+<blockquote>
+<div><p><em>eventId</em>     事件id          类型:string</p>
+<p><em>eventData</em>   数据            类型:table (只能一层)</p>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="client_rendertexture.html" title="RenderTexture"
+             >previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Acai.
+    </div>
+  </body>
+</html>

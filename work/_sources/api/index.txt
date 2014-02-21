@@ -1,0 +1,43 @@
+API
+========
+
+.. _luna_api:
+
+**下一版本修订计划**
+
+#. 统一为世界坐标系以减少坐标系转换的概念，如增加 GetWorldPosition 和 SetWorldPosition函数，但是：
+	#. 没有加入CCScene的节点设置的坐标是不正确的
+	#. 更改父节点后是否要自动修改坐标
+	#. 没有办法和Action结合起来，很鸡肋
+	#. 至今没考虑到，没有实际应用的场景
+#. 删除或者调整部分接口的位置
+#. 重新设计需要回调的方法的注册
+
+.. toctree::
+   :maxdepth: 2
+
+   global
+   client_global
+   client_serveragent
+   client_uimgr
+   client_panel
+   client_tableview
+   client_scrollpage
+   client_labelbmfont
+   client_labelttf
+   client_menu
+   client_controlbutton
+   client_editbox   
+   client_sprite 
+   client_node
+   client_layer
+   client_scrollview
+   client_textbox
+   client_webview
+   client_scale9sprite
+   client_particle
+   client_rendertexture
+   client_stats
+
+
+*更新日期：2013/12/11*   

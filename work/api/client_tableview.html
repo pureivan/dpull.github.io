@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TableView &mdash; dpull 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="dpull 1.0 documentation" href="../index.html" />
+    <link rel="up" title="API" href="index.html" />
+    <link rel="next" title="ScrollPage" href="client_scrollpage.html" />
+    <link rel="prev" title="Panel" href="client_panel.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="client_scrollpage.html" title="ScrollPage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="client_panel.html" title="Panel"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">API</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">TableView</a><ul>
+<li><a class="reference internal" href="#refresh">Refresh</a></li>
+<li><a class="reference internal" href="#getcontainer">GetContainer</a></li>
+<li><a class="reference internal" href="#setverticalfillorder">SetVerticalFillOrder</a></li>
+<li><a class="reference internal" href="#getverticalfillorder">GetVerticalFillOrder</a></li>
+<li><a class="reference internal" href="#insertcellatindex">InsertCellAtIndex</a></li>
+<li><a class="reference internal" href="#updatecellatindex">UpdateCellAtIndex</a></li>
+<li><a class="reference internal" href="#removecellatindex">RemoveCellAtIndex</a></li>
+<li><a class="reference internal" href="#getviewsize">GetViewSize</a></li>
+<li><a class="reference internal" href="#getcontentsize">GetContentSize</a></li>
+<li><a class="reference internal" href="#setcontentsize">SetContentSize</a></li>
+<li><a class="reference internal" href="#getcontentoffset">GetContentOffset</a></li>
+<li><a class="reference internal" href="#setcontentoffset">SetContentOffset</a></li>
+<li><a class="reference internal" href="#getoffsetfromindex">GetOffsetFromIndex</a></li>
+<li><a class="reference internal" href="#getrootpanel">GetRootPanel</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="client_panel.html"
+                        title="previous chapter">Panel</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="client_scrollpage.html"
+                        title="next chapter">ScrollPage</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tableview">
+<h1>TableView<a class="headerlink" href="#tableview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="refresh">
+<h2>Refresh<a class="headerlink" href="#refresh" title="Permalink to this headline">¶</a></h2>
+<p>重新加载数据，不重设偏移位置</p>
+<p>兼容性建议：</p>
+<blockquote>
+<div><p>第一次调用等同于ReloadData</p>
+<p>增加参数Refresh(true)等同于ReloadData</p>
+</div></blockquote>
+</div>
+<div class="section" id="getcontainer">
+<h2>GetContainer<a class="headerlink" href="#getcontainer" title="Permalink to this headline">¶</a></h2>
+<p>获取容器Panel</p>
+</div>
+<div class="section" id="setverticalfillorder">
+<h2>SetVerticalFillOrder<a class="headerlink" href="#setverticalfillorder" title="Permalink to this headline">¶</a></h2>
+<p>设置上下滚动的填充类型</p>
+</div>
+<div class="section" id="getverticalfillorder">
+<h2>GetVerticalFillOrder<a class="headerlink" href="#getverticalfillorder" title="Permalink to this headline">¶</a></h2>
+<p>获取上下滚动的填充类型</p>
+</div>
+<div class="section" id="insertcellatindex">
+<h2>InsertCellAtIndex<a class="headerlink" href="#insertcellatindex" title="Permalink to this headline">¶</a></h2>
+<p>插入指定的子Panel</p>
+</div>
+<div class="section" id="updatecellatindex">
+<h2>UpdateCellAtIndex<a class="headerlink" href="#updatecellatindex" title="Permalink to this headline">¶</a></h2>
+<p>刷新指定的子Panel</p>
+</div>
+<div class="section" id="removecellatindex">
+<h2>RemoveCellAtIndex<a class="headerlink" href="#removecellatindex" title="Permalink to this headline">¶</a></h2>
+<p>删除指定的子Panel</p>
+</div>
+<div class="section" id="getviewsize">
+<h2>GetViewSize<a class="headerlink" href="#getviewsize" title="Permalink to this headline">¶</a></h2>
+<p>获取可见区域大小</p>
+</div>
+<div class="section" id="getcontentsize">
+<h2>GetContentSize<a class="headerlink" href="#getcontentsize" title="Permalink to this headline">¶</a></h2>
+<p>获取容器Panel大小</p>
+</div>
+<div class="section" id="setcontentsize">
+<h2>SetContentSize<a class="headerlink" href="#setcontentsize" title="Permalink to this headline">¶</a></h2>
+<p>设置容器Panel大小</p>
+</div>
+<div class="section" id="getcontentoffset">
+<h2>GetContentOffset<a class="headerlink" href="#getcontentoffset" title="Permalink to this headline">¶</a></h2>
+<p>设置容器Panel偏移</p>
+</div>
+<div class="section" id="setcontentoffset">
+<h2>SetContentOffset<a class="headerlink" href="#setcontentoffset" title="Permalink to this headline">¶</a></h2>
+<p>获取容器Panel偏移</p>
+</div>
+<div class="section" id="getoffsetfromindex">
+<h2>GetOffsetFromIndex<a class="headerlink" href="#getoffsetfromindex" title="Permalink to this headline">¶</a></h2>
+<p>获取子Panel的位置</p>
+</div>
+<div class="section" id="getrootpanel">
+<h2>GetRootPanel<a class="headerlink" href="#getrootpanel" title="Permalink to this headline">¶</a></h2>
+<p>获取控件所在的Panel</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="client_scrollpage.html" title="ScrollPage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="client_panel.html" title="Panel"
+             >previous</a> |</li>
+        <li><a href="../index.html">dpull 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Acai.
+    </div>
+  </body>
+</html>
