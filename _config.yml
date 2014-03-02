@@ -1,5 +1,4 @@
 name: dpull  
-about: 这家伙很懒，什么都没留下。
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 include: ["_static"]
@@ -7,13 +6,9 @@ exclude: ["README.md"] # files to exclude
 pygments: true
 encoding: utf-8
 markdown: redcarpet
-redcarpet: 
-    extensions: ["tables"]
+markdown_ext: md
+redcarpet:
+  extensions: ["tables", "fenced_code_blocks", "disable_indented_code_blocks", "space_after_headers", "with_toc_data"]
 
 #excerpt_separator: <!--more--> 
 excerpt_separator: ----------
-
-
-urls:
-    - text: email
-      url: mailto:beingstudio@gmail.com

@@ -5,7 +5,7 @@ categories: [general, dotnet]
 tags: [csharp, socket]
 ---
 
-来公司后一直负责网络库部分,后来小项目需要用.net写一个网络库，就操刀写了一个，与公司网络库使用复杂的IOCP模型和epool相比，这个.net网络库我采用了最简单的select模型。
+来公司后一直负责网络库部分,后来一个工具项目需要用.net写一个网络库，就动手写了一个，与公司网络库使用复杂的IOCP模型和epool相比，这个.net网络库采用了最简单的select模型。
 
 ----------
 
