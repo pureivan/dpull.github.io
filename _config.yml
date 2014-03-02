@@ -1,6 +1,7 @@
 name: dpull  
 paginate: 10 # pagination based on number of posts
-paginate_path: "page:num"
+paginate_path: "/page/:num"
+permalink: "/blog/:title"
 include: ["_static"]
 exclude: ["README.md"] # files to exclude
 pygments: true
