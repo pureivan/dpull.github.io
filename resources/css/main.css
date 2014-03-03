@@ -499,6 +499,6 @@ table {
 table, th, td {
   border: 1px solid black; }
 
-table:thead {
+thead {
   background-color: green;
   color: white; }
