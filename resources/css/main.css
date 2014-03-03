@@ -493,14 +493,12 @@ blockquote {
     background: #86c543; }
 
 table {
-  position: relative;
   width: 100%;
-  margin-bottom: 6em;
-  color: #4d4d4d; }
+  border-collapse: collapse; }
+
+table, th, td {
+  border: 1px solid black; }
 
 table:thead {
-  background: #44635d; }
-
-table td {
-  background: rgba(255, 255, 255, 0.3);
-  text-indent: 6px; }
+  background-color: green;
+  color: white; }
