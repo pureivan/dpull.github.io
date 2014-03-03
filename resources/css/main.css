@@ -498,30 +498,8 @@ table {
   margin-bottom: 1em;
   color: #4d4d4d; }
 
-table:after {
-  content: "";
-  width: 32px;
-  height: 32px;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -62px;
-  background: #44635d;
-  background: -moz-linear-gradient(0deg, #44635d 0%, #44635d 90%, #263733 100%);
-  background: -webkit-linear-gradient(0deg, #44635d 0%, #44635d 90%, #263733 100%);
-  background: -o-linear-gradient(0deg, #44635d 0%, #44635d 90%, #263733 100%);
-  background: -ms-linear-gradient(to 0deg, #44635d 0%, #44635d 90%, #263733 100%);
-  background: linear-gradient(to 0deg, #44635d 0%, #44635d 90%, #263733 100%);
-  font-size: 18px;
-  line-height: 32px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8); }
-
 table th, .main .article table td {
   padding: 4px 0; }
-
-table th {
-  background: rgba(0, 0, 0, 0.1); }
 
 table td {
   background: rgba(255, 255, 255, 0.3);
