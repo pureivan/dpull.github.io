@@ -495,11 +495,11 @@ blockquote {
 table {
   position: relative;
   width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 6em;
   color: #4d4d4d; }
 
-table th, .main .article table td {
-  padding: 4px 0; }
+table:thead {
+  background: #44635d; }
 
 table td {
   background: rgba(255, 255, 255, 0.3);
