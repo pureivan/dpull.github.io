@@ -31,13 +31,16 @@ ios和android特有功能的开发，选用mac作为开发机，因为它又能�
 打开终端
 
 	{% highlight bash %}
+	
 	cd  
 	vim .bash_profile  (i 进入编辑模式 ESC退出编辑模式 :wq退出并保存 :q!退出不保存)   
+	
 	{% endhighlight %}            
 
 编辑文件
 	
 	{% highlight bash %}
+
     export CLICOLOR=1
     export LSCOLORS=gxfxaxdxcxegedabagacad
     alias ll="ls -l"
@@ -48,6 +51,7 @@ ios和android特有功能的开发，选用mac作为开发机，因为它又能�
     export NDK_ROOT=/Applications/android-ndk-r8d
     export PATH=$PATH:$ANDROID_SDK_ROOT
     export PATH=$PATH:$ANDROID_NDK_ROOT 
+
 	{% endhighlight %}  
 
 > **注意**：
