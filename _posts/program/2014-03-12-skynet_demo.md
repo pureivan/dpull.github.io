@@ -16,19 +16,19 @@ tags: [c]
 1. 下载lua5.2 和 skynet
 1. 编译并安装lua
 	
-	make macosx
-	sudo make install
+		{% highlight bash %}
+		make macosx
+		sudo make install
+		{% endhighlight %}
 
 1. 编译skynet
 
 	1. 设置gcc查找路径 （修改 .bash_profile）
 	
-		{% highlight bash %}
-		
-		export CPATH=$CPATH:/usr/local/include
-		export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
-	
-		{% endhighlight %}  	
+			{% highlight bash %}
+			export CPATH=$CPATH:/usr/local/include
+			export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib	
+			{% endhighlight %}
 	
 	1. 执行make
 
