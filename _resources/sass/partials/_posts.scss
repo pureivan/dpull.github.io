@@ -39,25 +39,6 @@ blockquote {
     margin-bottom: 1.6rem;
 }
 
-blockquote:before {
-  color: $header;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
-
-blockquote:after {
-  color: $header;
-  content: close-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
 #disqus_thread {
     margin-top: 60px;
     margin-top: 6rem;

@@ -438,22 +438,6 @@ blockquote {
   margin-bottom: 16px;
   margin-bottom: 1.6rem; }
 
-blockquote:before {
-  color: #86c543;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em; }
-
-blockquote:after {
-  color: #86c543;
-  content: close-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em; }
-
 #disqus_thread {
   margin-top: 60px;
   margin-top: 6rem; }
