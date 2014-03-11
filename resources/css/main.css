@@ -433,14 +433,26 @@ blockquote {
   padding-left: 10px;
   padding-left: 1rem;
   border-left: 6px solid #86c543;
-  font-size: 30px;
-  font-size: 3rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   margin-bottom: 16px;
   margin-bottom: 1.6rem; }
-  blockquote p:before {
-    content: "\201c"; }
-  blockquote p:after {
-    content: "\201d"; }
+
+blockquote:before {
+  color: #86c543;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em; }
+
+blockquote:after {
+  color: #86c543;
+  content: close-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em; }
 
 #disqus_thread {
   margin-top: 60px;
