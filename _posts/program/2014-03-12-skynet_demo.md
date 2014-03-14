@@ -22,10 +22,11 @@ git clone https://github.com/dpull/skynet_demo.git
 ./test
 
 ## TODO List ##
-1. 将LuaPacker移植（acai）
-1. 将与客户端通信的分包格式移植（acai）
-1. 尝试redis（dinghim）
+1. ~~将LuaPacker移植（acai）~~
+1. ~~将与客户端通信的分包格式移植（acai）~~
+1. ~~尝试redis（dinghim）~~
 1. 完成客户端登陆的基本逻辑（dinghim）
 1. 尝试单机玩法的模块（dinghim）
+1. 服务模块的主循环，或定时回掉（acai）
 1. 尝试联机玩法的服务（acai）
 1. 玩家与玩家间通信
