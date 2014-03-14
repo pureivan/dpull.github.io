@@ -15,11 +15,11 @@ tags: [c]
 我和[dinghim](https://github.com/dinghim)在3.12-3.15每晚7点~9点， 使用现有手游的客户端和服务端的业务逻辑，实现创建角色，登陆游戏，有简单游戏功能（移植不涉及奖励配置表的探索功能）。
 
 ## 下载并安装Skynet ##
-git clone https://github.com/dpull/skynet_demo.git
-./build
-./run
-另一个控制台
-./test
+	git clone https://github.com/dpull/skynet_demo.git
+	./build
+	./run
+	另一个控制台
+	./test
 
 ## TODO List ##
 1. 完成客户端登陆的基本逻辑（dinghim）
