@@ -37,9 +37,9 @@ Dumper有个功能是当程序执行exit等进程退出函数的时候会走宕�
 在执行exit可以注册一个回调函数(由atexit添加)，
 当执行这个回调的时候要注意此时只有一个线程可用，其他的线程都被挂起。
 （_lockexit的注释
-Makes sure only one thread is in the exit code at a time. 
+`Makes sure only one thread is in the exit code at a time. 
 If a thread is already in the exit code, it must be allowed to continue. 
-All other threads must pend.）
+All other threads must pend.`）
 
 在执行FreeLibrary的时候线程退出会停在ExitThread函数不返回（可以看Windows核心编程（中文版）第五版P529），
 这时候如果等待线程退出就会卡住（在dll中用KThread要注意，如果其析构时调用KThread::Destroy可能会导致线程卡住）。

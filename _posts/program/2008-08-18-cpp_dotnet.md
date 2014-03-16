@@ -51,12 +51,11 @@ C++类型（本机类型）和.NET Framework类型对应，
 	销毁              	| 无              	| delete
 	访问成员          	| ->              	| ->
 	判空              	| nullptr         	| NULL
-
-        
-	{% highlight C++ %}
+ 
+    {% highlight C++ %}
     List^ result = gcnew List();
     result->Add("www.dpull.com");   
-	{% endhighlight %}
+    {% endhighlight %}
 
 ## 引用运算符 ##
 因为.NET Framework中只有out关键字，所以C++.NET的引用在C#中看来就是out
@@ -65,27 +64,27 @@ C++类型（本机类型）和.NET Framework类型对应，
 	--- 			  	| ---             | --- 	
 	&               | ref, out        | %
 
-	{% highlight C++ %}
+    {% highlight C++ %}
     bool TryGet(String^% value);  
-	{% endhighlight %}
+    {% endhighlight %}
        
 ## 托管数组声明和托管泛行声明 ##
 
-	{% highlight C++ %}
+    {% highlight C++ %}
     array^ data;
-	array^ names;
-	List^ result; 
-	{% endhighlight %}
+    array^ names;
+    List^ result; 
+    {% endhighlight %}
         
 ## 新增for each关键字 同C#的foreach ##
 
-	{% highlight C++ %}
+    {% highlight C++ %}
     array^data =ms->ToArray();        
-	for each (byte b in data)        
-	{            
-		ret->AppendFormat("{0:X2}", b);        
-	}
-	{% endhighlight %}
+    for each (byte b in data)        
+    {            
+    	ret->AppendFormat("{0:X2}", b);        
+    }
+    {% endhighlight %}
 
 ## 类和结构声明 ##
 使用C++语法声明的class 或者 struct为本机代码（非托管代码）。
@@ -108,20 +107,20 @@ C++类型（本机类型）和.NET Framework类型对应，
 	{% endhighlight %}
 
 ## 重载 ##
-	{% highlight C++ %}
+    {% highlight C++ %}
     virtual String^ ToString() override;
-	{% endhighlight %}
+    {% endhighlight %}
 
 ## .NET 异常 ##
-	{% highlight C++ %}
+    {% highlight C++ %}
     throw gcnew ArgumentNullException("dllName");
-	{% endhighlight %}
+    {% endhighlight %}
 
 ## 事件(event) ##
-	{% highlight C++ %}
-	delegate void ClickEventHandler(int, double);
-	event ClickEventHandler^ OnClick;
-	{% endhighlight %}
+    {% highlight C++ %}
+    delegate void ClickEventHandler(int, double);
+    event ClickEventHandler^ OnClick;
+    {% endhighlight %}
 
 ## 托管和非托管交互 ##
 托管类中允许出现非托管成员变量，但非托管类中不允许出现托管成员变量。
@@ -131,12 +130,12 @@ C++类型（本机类型）和.NET Framework类型对应，
 ## 引用命名空间和添加dll引用 ##
 可以在C++的Project通用属性页上配置引用的dll，也可以直接写入代码，
 举例说明：
-	{% highlight C++ %}
+    {% highlight C++ %}
     using namespace System;
     using namespace System::Text;
     using namespace System::Data;
     using namespace System::Data::SqlClient;
-	{% endhighlight %}
+    {% endhighlight %}
 
 ## 遇到servprov.h中IServiceProvider报错 ##
 
@@ -156,31 +155,31 @@ System;前面。
 
 *第二种办法:* 修改代码
 
-	{% highlight C++ %}
+    {% highlight C++ %}
     //Line 93 in servprov.h is:typedef 
     IServiceProvider *LPSERVICEPROVIDER;
-
+    
     //Change this to:
     #ifdef __cplusplustypedef
         ::IServiceProvider *LPSERVICEPROVIDER;
     #else 
         typedef IServiceProvider *LPSERVICEPROVIDER;
     #endif
-	{% endhighlight %}
+    {% endhighlight %}
 
 ## 字符串互转 ##
 
 **非托管字符串转托管字符串**
 
-	{% highlight C++ %}
+    {% highlight C++ %}
     char *psz = "www.886s.com";
-	String^ result = gcnew String(psz);
-	{% endhighlight %}
+    String^ result = gcnew String(psz);
+    {% endhighlight %}
 
 
 **托管字符串转非托管字符串**
 
-	{% highlight C++ %}
+    {% highlight C++ %}
     class Common    
     {     
     public:         
@@ -188,33 +187,33 @@ System;前面。
         static void MarshalString_A(System::String ^sSource, char szDest[], int nDestSize);         
         static void MarshalString_W (System::String ^sSource, wchar_t szDest[], int nDestSize);     
     };    
-
+    
     void Common::MarshalString_A(System::String ^sSource, char szDest[], int nDestSize)    
     {        
         using namespace System::Runtime::InteropServices;        
-
+    
         char* szSource = (char*)(Marshal::StringToHGlobalAnsi(sSource)).ToPointer();   
         assert(szSource);    
-
+    
         strncpy(szDest, szSource, nDestSize);        
         szDest[nDestSize - 1] = '\0';      
-
+    
         Marshal::FreeHGlobal(System::IntPtr((void*)szSource));    
     }    
-
+    
     void Common::MarshalString_W (System::String ^sSource, wchar_t szDest[], int nDestSize)    
     {        
         using namespace System::Runtime::InteropServices;        
-
+    
         wchar_t* szSource = (wchar_t*)(Marshal::StringToHGlobalUni(sSource)).ToPointer();
         assert(szSource);        
-
+    
         wcsncpy(szDest, szSource, nDestSize);        
         szDest[nDestSize - 1] = '\0';        
-
+    
         Marshal::FreeHGlobal(System::IntPtr((void*)szSource));    
     }    
-
+    
     void Common::MarshalString(System::String ^sSource, TCHAR szDest[], int nDestSize)    
     {
     #ifdef UNICODE 
@@ -222,4 +221,4 @@ System;前面。
     #else        
         MarshalString_A(sSource, szDest, nDestSize);#endif    
     }
-	{% endhighlight %}
+    {% endhighlight %}

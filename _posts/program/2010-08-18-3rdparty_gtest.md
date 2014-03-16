@@ -21,8 +21,10 @@ Gtest提供一整套预定义的断言。断言分为两类：名称以`ASSERT_`
 
 断言宏后可以使用输出操作符<<进行相关用例的描述。
 	
-	ASSERT_TRUE(ExecuteMgr.Save(szFileName)) << "保存XXXX文件";
-	EXPECT_TRUE(IsExecuteToday(szFileName)) << "检查文件内容";
+    {% highlight c++ %}
+    ASSERT_TRUE(ExecuteMgr.Save(szFileName)) << "保存XXXX文件";
+    EXPECT_TRUE(IsExecuteToday(szFileName)) << "检查文件内容";
+    {% endhighlight %}
 		
 断言宏有Bool检查，整型检查、浮点型检查、字符串检查(char*)、异常检查等
 
@@ -35,111 +37,120 @@ Gtest提供一整套预定义的断言。断言分为两类：名称以`ASSERT_`
 
 ### 全局事件 ###
 	
-	class FooEnvironment : public testing::Environment
-	{
-	public:
-		virtual void SetUp()
-		{
-		}
-		virtual void TearDown()
-		{
-		}
-	};
+    {% highlight c++ %}
+    class FooEnvironment : public testing::Environment
+    {
+    public:
+    	virtual void SetUp()
+    	{
+    	}
+    	virtual void TearDown()
+    	{
+    	}
+    };
+    {% endhighlight %}
 		
 ### TestSuite事件 ###
-	class FooTest : public testing::Test 
-	{
-	protected:
-		static void SetUpTestCase() 
-		{
-		}
-		static void TearDownTestCase() 
-		{
-		}
-	};
+    {% highlight c++ %}
+    class FooTest : public testing::Test 
+    {
+    protected:
+    	static void SetUpTestCase() 
+    	{
+    	}
+    	static void TearDownTestCase() 
+    	{
+    	}
+    };
+    {% endhighlight %}
 		
 ### TestCase事件 ###
-	class FooCalcTest:public testing::Test
-	{
-	protected:
-		virtual void SetUp()
-		{
-		}
-		virtual void TearDown()
-		{
-		}
-	};
+    {% highlight c++ %}
+    class FooCalcTest:public testing::Test
+    {
+    protected:
+    	virtual void SetUp()
+    	{
+    	}
+    	virtual void TearDown()
+    	{
+    	}
+    };
+    {% endhighlight %}
 		
-
 ## 死亡测试 Death Tests ##
 程序宕机处理模块能捕获程序的 除0、非法地址访问、未捕获异常、Abort等程序异常问题，但这个应当怎么来进行单元测试？
 死亡测试可以搞定。
 
-	#define DUMP_TEST_STRING "Success"
-	#define ASSERT_DUMP_TEST(statement) ASSERT_DEATH(statement, DUMP_TEST_STRING)
-	
-	class DumperTest : public testing::Test
-	{
-	public:
-		void SetUp() 
-		{
-			Dumper::GetInstance().Init();
-			Dumper::GetInstance().SetExitProcessOnExceptionFlag(true);
-			Dumper::GetInstance().SetOnMiniDumpCreateCallBack(CheckDumper);	
-		}
-
-		void TearDown() 
-		{
-			Dumper::GetInstance().UnInit();
-		}	
-
-		static void CheckDumper(int nCaptureSucceed, const char szCrashReporterFile[])
-		{
-			ASSERT_TRUE(nCaptureSucceed);
-			ASSERT_TRUE(File::Exists(szCrashReporterFile));
-
-			fputs(DUMP_TEST_STRING, stderr);
-			fflush(stderr);
-
-			File::Delete(szCrashReporterFile);
-		}
-	};
-
-	TEST_F(DumperTest, Test_Exit)
-	{
-		ASSERT_DUMP_TEST(exit(3));
-	}
-
-	TEST_F(DumperTest, Test_Abort)
-	{
-		ASSERT_DUMP_TEST(abort());
-	}
-
-	TEST_F(DumperTest, Test_printf_NULL)
-	{
-		ASSERT_DUMP_TEST(printf(NULL));
-	}
+    {% highlight c++ %}
+    #define DUMP_TEST_STRING "Success"
+    #define ASSERT_DUMP_TEST(statement) ASSERT_DEATH(statement, DUMP_TEST_STRING)
+    
+    class DumperTest : public testing::Test
+    {
+    public:
+    	void SetUp() 
+    	{
+    		Dumper::GetInstance().Init();
+    		Dumper::GetInstance().SetExitProcessOnExceptionFlag(true);
+    		Dumper::GetInstance().SetOnMiniDumpCreateCallBack(CheckDumper);	
+    	}
+    
+    	void TearDown() 
+    	{
+    		Dumper::GetInstance().UnInit();
+    	}	
+    
+    	static void CheckDumper(int nCaptureSucceed, const char szCrashReporterFile[])
+    	{
+    		ASSERT_TRUE(nCaptureSucceed);
+    		ASSERT_TRUE(File::Exists(szCrashReporterFile));
+    
+    		fputs(DUMP_TEST_STRING, stderr);
+    		fflush(stderr);
+    
+    		File::Delete(szCrashReporterFile);
+    	}
+    };
+    
+    TEST_F(DumperTest, Test_Exit)
+    {
+    	ASSERT_DUMP_TEST(exit(3));
+    }
+    
+    TEST_F(DumperTest, Test_Abort)
+    {
+    	ASSERT_DUMP_TEST(abort());
+    }
+    
+    TEST_F(DumperTest, Test_printf_NULL)
+    {
+    	ASSERT_DUMP_TEST(printf(NULL));
+    }
+    {% endhighlight %}
 
 ## 参数化测试 Type-Parameterized Tests ##
 
 比如游戏中的IB商城，通常分为绑金区和金币区，其测试用例有很多相同的，这时候就可以使用参数化测试。
 	
-	class BuyItemTest : public::testing::TestWithParam<int> // 参数化类型的TestSuite
-	{
-
-	};
-
-	TEST_P(BuyItemTest, ItemNotExist) // 使用TEST_P标示为参数化类型的TestCase
-	{
-		int nZoneId =  GetParam(); // 使用GetParam获取参数
-		ASSERT_TRUE(Buy(nZoneId, nItemId));
-	}
-
-	INSTANTIATE_TEST_CASE_P(TrueReturn, BuyItemTest, testing::Values(0, 1));
-	// 设定参数
-	// 参数1 是测试案例的前缀，可以任意取。 
-	// 参数2 是测试案例的名称，需要和之前定义的参数化的类的名称相同，如：BuyItemTest 
-	// 参数3 是可以理解为参数生成器，上面的例子使用test::Values表示使用括号内的参数。
+    {% highlight c++ %}
+    class BuyItemTest : public::testing::TestWithParam<int> // 参数化类型的TestSuite
+    {
+    
+    };
+    
+    TEST_P(BuyItemTest, ItemNotExist) // 使用TEST_P标示为参数化类型的TestCase
+    {
+    	int nZoneId =  GetParam(); // 使用GetParam获取参数
+    	ASSERT_TRUE(Buy(nZoneId, nItemId));
+    }
+    
+    INSTANTIATE_TEST_CASE_P(TrueReturn, BuyItemTest, testing::Values(0, 1));
+    // 设定参数
+    // 参数1 是测试案例的前缀，可以任意取。 
+    // 参数2 是测试案例的名称，需要和之前定义的参数化的类的名称相同，如：BuyItemTest 
+    // 参数3 是可以理解为参数生成器，上面的例子使用test::Values表示使用括号内的参数。
+    {% endhighlight %}
 
 ## 参数生成器 ##
 
@@ -158,29 +169,35 @@ Gtest提供一整套预定义的断言。断言分为两类：名称以`ASSERT_`
 
 ### Main函数 ###
 
+    {% highlight c++ %}
     int _tmain(int argc, _TCHAR* argv[])
     {
         testing::InitGoogleMock(&argc, argv); 
-
+    
         return RUN_ALL_TESTS(); 
     }
+    {% endhighlight %}
 
 ### 创建mock类 ###
 
-        class XRoleManager
-        {
-        public:
-            MOCK_METHOD1(GetRole, XRole* (DWORD dwID)); // 模拟 XRole* GetRole(DWORD dwID);
-        };
+    {% highlight c++ %}
+    class XRoleManager
+    {
+    public:
+        MOCK_METHOD1(GetRole, XRole* (DWORD dwID)); // 模拟 XRole* GetRole(DWORD dwID);
+    };
+    {% endhighlight %}
         
 
 `MOCK_METHOD1` 说明函数拥有一个参数，`GetRole`是函数名，`XRole*`是返回值，`(DWORD dwID)`是参数。
 
 ### 实现桩函数 ###
 
-        EXPECT_CALL(*g_pRoleMgr, GetRole(_)).WillOnce(Return(NULL)); // 期望只执行一次，这一次返回NULL
-        EXPECT_CALL(*g_pRoleMgr, GetRole(_)).WillRepeatedly(Return(NULL)); // 总是返回为NULL
-        EXPECT_CALL(*g_pRoleMgr, GetRole(_)).WillRepeatedly(Invoke(GetRole)); // 总是使用指定的GetRole函数模拟该成员函数
+    {% highlight c++ %}
+    EXPECT_CALL(*g_pRoleMgr, GetRole(_)).WillOnce(Return(NULL)); // 期望只执行一次，这一次返回NULL
+    EXPECT_CALL(*g_pRoleMgr, GetRole(_)).WillRepeatedly(Return(NULL)); // 总是返回为NULL
+    EXPECT_CALL(*g_pRoleMgr, GetRole(_)).WillRepeatedly(Invoke(GetRole)); // 总是使用指定的GetRole函数模拟该成员函数
+    {% endhighlight %}
 
 ### 使用桩函数 ###
 对于全局变量或者函数参数变量的虚函数,桩函数很容易替换上,但对于成员变量,很难搞,要通过模板或者基类指针来替换

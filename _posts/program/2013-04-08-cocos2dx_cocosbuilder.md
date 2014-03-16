@@ -33,43 +33,47 @@ Cocostudio虽然支持骨骼动画，序列帧动画，但用起来复杂，制�
 - Using Custom Classes 编辑器支持Node设置 `Custom class`，如将其设置为 `HelloCocosBuilderLayer`。
 代码中需将`HelloCocosBuilderLayer` 对应的CCNodeLoader注册，存放在`CCNodeLoaderLibrary::mCCNodeLoaders`，其中包含了多个默认支持的类型和自定义的类型。
 
-		{% highlight C++ %}
-		/* Create an autorelease CCNodeLoaderLibrary. */
-		CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-		ccNodeLoaderLibrary->registerCCNodeLoader("HelloCocosBuilderLayer", HelloCocosBuilderLayerLoader::loader());
-		{% endhighlight %}
+    {% highlight C++ %}
+    /* Create an autorelease CCNodeLoaderLibrary. */
+    CCNodeLoaderLibrary * ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    ccNodeLoaderLibrary->registerCCNodeLoader("HelloCocosBuilderLayer", HelloCocosBuilderLayerLoader::loader());
+    {% endhighlight %}
 
-		{% highlight C++ %}
-		class HelloCocosBuilderLayerLoader : public cocos2d::extension::CCLayerLoader {
-		   public:
-		       // 用于创建一个自身的实例，保存为一个CCLayerLoader。
-		       CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(HelloCocosBuilderLayerLoader, loader); 
-		
-		   protected:
-		       // 用于创建一个类型为HelloCocosBuilderLayer的CCNode。
-		       CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(HelloCocosBuilderLayer);
-		};
-		{% endhighlight %}
+----------
 
-		{% highlight C++ %}
-		cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
-		
-		/* Read a ccbi file. */
-		CCNode * node = ccbReader->readNodeGraphFromFile("ccb/HelloCocosBuilder.ccbi", this);
-		{% endhighlight %}
+    {% highlight C++ %}
+    class HelloCocosBuilderLayerLoader : public cocos2d::extension::CCLayerLoader {
+       public:
+           // 用于创建一个自身的实例，保存为一个CCLayerLoader。
+           CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(HelloCocosBuilderLayerLoader, loader); 
+    
+       protected:
+           // 用于创建一个类型为HelloCocosBuilderLayer的CCNode。
+           CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(HelloCocosBuilderLayer);
+    };
+    {% endhighlight %}
+
+----------
+
+    {% highlight C++ %}
+    cocos2d::extension::CCBReader * ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+    
+    /* Read a ccbi file. */
+    CCNode * node = ccbReader->readNodeGraphFromFile("ccb/HelloCocosBuilder.ccbi", this);
+    {% endhighlight %}
 
 读取ccbi文件，生成CCNode。
 
 CCBFile控件用来嵌入另外一个ccbi文件，比如将导航栏做成一个单独的ccbi文件，多个文件引入。
 	
-	{% highlight C++ %}
-	class HelloCocosBuilderLayer
-	: public cocos2d::CCLayer
-	, public cocos2d::extension::CCBSelectorResolver
-	, public cocos2d::extension::CCBMemberVariableAssigner
-	, public cocos2d::extension::CCNodeLoaderListener   
-	{}；
-	{% endhighlight %}
+    {% highlight C++ %}
+    class HelloCocosBuilderLayer
+        : public cocos2d::CCLayer
+        , public cocos2d::extension::CCBSelectorResolver
+        , public cocos2d::extension::CCBMemberVariableAssigner
+        , public cocos2d::extension::CCNodeLoaderListener   
+    {}；
+    {% endhighlight %}
 
 - Edit Custom Property 对于 `Custom class` 可设置 `Custom Property` 。
   当设置这些属性需重载`CCBMemberVariableAssigner::onAssignCCBCustomProperty`方法。
@@ -80,9 +84,9 @@ CCBFile控件用来嵌入另外一个ccbi文件，比如将导航栏做成一个
 
 	> 当设置这些变量时root node或owner node需重载`CCBMemberVariableAssigner::onAssignCCBMemberVariable`方法
 	> 
-	> **root node是调用CCBReader::readNodeGraphFromFile时的第一个读取到的第一个CCNode**
+	> **root node是调用`CCBReader::readNodeGraphFromFile`时的第一个读取到的第一个CCNode**
 	> 
-	> **owner node 是CCBReader::readNodeGraphFromFile(const char\* pCCBFileName, CCObject\* pOwner)设置的pOwner**
+	> **owner node 是`CCBReader::readNodeGraphFromFile(const char* pCCBFileName, CCObject* pOwner)`设置的pOwner**
 
 - Adding Callbacks to CCControl
 
@@ -92,30 +96,28 @@ CCBFile控件用来嵌入另外一个ccbi文件，比如将导航栏做成一个
 	
 	`复选框` 响应的事件
 	
-	Target需要实现CCBSelectorResolver::onResolveCCBCCControlSelector。
+	Target需要实现`CCBSelectorResolver::onResolveCCBCCControlSelector`。
 	
-	事件响应函数原型：void (CCObject::\*SEL\_CCControlHandler)(CCObject*, CCControlEvent);
+	事件响应函数原型：`void (CCObject::*SEL_CCControlHandler)(CCObject*, CCControlEvent);`
 
 - CCBReader默认的回调函数
 
 	除了使用root node或owner node重载一些类实现回调功能外，CCBReader还支持默认的回调函数，通过构造函数设置。
 
-		{% highlight C++ %}
-		// 构造函数：(目标节点如果包含响应函数,优先目标节点)
-		CCBReader(
-		   CCNodeLoaderLibrary * pCCNodeLoaderLibrary, // CCB类型转换为C++类型
-		   CCBMemberVariableAssigner * pCCBMemberVariableAssigner, // 当指定的target不存在处理函数时, 变量赋值的处理函数
-		   CCBSelectorResolver * pCCBSelectorResolver, // 按钮或菜单事件响应函数
-		   CCNodeLoaderListener * pCCNodeLoaderListener // 当节点加载完成时, 回调函数(注意:是每一个节点,并非一个文件)
-		); 
-		
-		// 设置资源文件根目录
-		void setCCBRootPath(const char* pCCBRootPath);  
-		{% endhighlight %}
+        {% highlight C++ %}
+        // 构造函数：(目标节点如果包含响应函数,优先目标节点)
+        CCBReader(
+           CCNodeLoaderLibrary * pCCNodeLoaderLibrary, // CCB类型转换为C++类型
+           CCBMemberVariableAssigner * pCCBMemberVariableAssigner, // 当指定的target不存在处理函数时, 变量赋值的处理函数
+           CCBSelectorResolver * pCCBSelectorResolver, // 按钮或菜单事件响应函数
+           CCNodeLoaderListener * pCCNodeLoaderListener // 当节点加载完成时, 回调函数(注意:是每一个节点,并非一个文件)
+        ); 
+        
+        // 设置资源文件根目录
+        void setCCBRootPath(const char* pCCBRootPath);  
+        {% endhighlight %}
 
-
-
-	> 构造函数的参数 ``pCCBSelectorResolver`` 类中函数的返回函数指针要是target的成员函数，感觉实现的不完备。
+> 构造函数的参数 ``pCCBSelectorResolver`` 类中函数的返回函数指针要是target的成员函数，感觉实现的不完备。
 
 ## 动画实现 ##
 [官方文档](https://github.com/cocos2d/CocosBuilder/blob/master/Documentation/6.%20Working%20with%20Animations.md)
@@ -127,19 +129,19 @@ CCBFile控件用来嵌入另外一个ccbi文件，比如将导航栏做成一个
 
 时间有限，仅记录几个关键词::
 	
-	{% highlight C++ %}
+    {% highlight C++ %}
     CCBReader::mActionManager 类型 CCBAnimationManager，init时创建, 
-
+    
     CCBReader::mActionManagers 类型 CCDictionary readFileWithCleanUp时创建 ``key`` Node指针 ``value`` mActionManager， 用于给根节点setUserObject，其值为对应的
         
     CCBReader::mAnimatedProps 类型 CCDictionary readNodeGraph中read属性前创建，用于parseProperties，然后释放
-
+    
     CCBAnimationManager::setRootNode CCB文件的第一个节点
-
+    
     CCBAnimationManager::mSequences 存放CCB文件的Timeline (CCBSequence)  CCBReader::readSequences()
-
+    
     CCBAnimationManager::mNodeSequences ``key`` Node指针 ``value`` CCDictionary<key frame 类型, CCBSequenceProperty> key frame 类型 rotation visible position scale...
-
+    
     CCActionInterval* CCBAnimationManager::getAction
         "rotation"      CCBRotateTo 
         "opacity"       CCFadeTo 
@@ -155,22 +157,22 @@ CCBFile控件用来嵌入另外一个ccbi文件，比如将导航栏做成一个
         kCCBKeyframeEasingCubicIn   CCEaseIn::create(pAction, fEasingOpt)
         kCCBKeyframeEasingCubicOut  CCEaseOut::create(pAction, fEasingOpt)
         ...
-
+    
     CCBAnimationManager::runAction
         CCNode->runAction(CCFiniteTimeAction); 
         
     CCBAnimationManager::setDelegate
     CCBAnimationManager::setAnimationCompletedCallback  
-
+    
     CCBAnimationManager::runAnimationsForSequenceNamedTweenDuration(const char *pName, float fTweenDuration);
     CCBAnimationManager::runAnimationsForSequenceNamed(const char *pName);
     CCBAnimationManager::runAnimationsForSequenceIdTweenDuration(int nSeqId, float fTweenDuraiton); 如果fTweenDuration大于0，则CCNode->runAction(CCFiniteTimeAction)的参数CCFiniteTimeAction会添加一个CDelayTime::create(timeFirst)
-	{% endhighlight %}
+    {% endhighlight %}
 
 ## CCBFile控件的实现 ##
 CCBFile控件用来引用另外一个CCB文件
 
-	{% highlight C++ %}
+    {% highlight C++ %}
     CCBReader::readNodeGraph
         // Read properties
         ccNodeLoader->parseProperties(node, pParent, this);         
@@ -180,19 +182,16 @@ CCBFile控件用来引用另外一个CCB文件
         if (dynamic_cast<CCBFile*>(node)) { ... } ==> 将CCBFile的属性和动作设定在CCBFile::mCCBFileNode上。  
     {% endhighlight %}
 
-
-
-
 > 要设置被引用的根layer的Content Size
 > 该版本的CCBReader存在bug，会将引用的CCB文件ignoreAnchorPointForPosition设置为false。
                 
-
-	{% highlight C++ %}
+    
+    {% highlight C++ %}
     // CCBReader.cpp 642行是多余的，
     // 因为ccbFileNode的ignoreAnchorPointForPosition没有被赋值，
     // 会把原本的embeddedNode的ignoreAnchorPointForPosition给覆盖掉
     embeddedNode->ignoreAnchorPointForPosition(ccbFileNode->isIgnoreAnchorPointForPosition()); 
-	{% endhighlight %}
+    {% endhighlight %}
 
 ## 创建不同分辨率的layer如何编辑和使用 ##
 [官方文档](https://github.com/cocos2d/CocosBuilder/blob/master/Documentation/5.%20Working%20with%20Multiple%20Resolutions.md)
@@ -209,10 +208,10 @@ sceneWithNodeGraphFromFile:owner:parentSize: methods.
 如果有使用了自定义尺寸，就需要将尺寸传给loader。
 为此，需要调用nodeGraphFromFile:owner:parentSize: or sceneWithNodeGraphFromFile:owner:parentSize: 方法
 
-	{% highlight C++ %}
-	CGSize mySize = CGSizeMake(100.0f, 100.0f);
-	CCNode* myNode = [CCBReader nodeGraphFromFile:@"myNode.ccbi" owner:NULL parentSize:mySize];
-	{% endhighlight %}
+    {% highlight C++ %}
+    CGSize mySize = CGSizeMake(100.0f, 100.0f);
+    CCNode* myNode = [CCBReader nodeGraphFromFile:@"myNode.ccbi" owner:NULL parentSize:mySize];
+    {% endhighlight %}
      
 Before loading your ccbi-files you can set the resolution scale you want
 to use. The default resolution scale is 1 for iPhone and 2 for iPad, but
@@ -221,9 +220,9 @@ sometimes it can be useful to use other scale factors.
 加载ccbi-files前，可以设置想要使用的分辨率缩放因子。
 iphone的默认因子是1，ipad是2，但有时可能其它因子更合适。
 
-	{% highlight C++ %}
+    {% highlight C++ %}
     [CCBReader setResolutionScale: 2.5f];
-	{% endhighlight %}
+    {% endhighlight %}
 
 
 >这个接口cocos2dx没有实现，但可以使用CCEGLView::setDesignResolutionSize间接实现此功能。

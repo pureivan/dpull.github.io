@@ -7,7 +7,7 @@ tags: [c]
 
 有一道思科的面试题
 		
-	{% highlight c %}
+    {% highlight c %}
     const int x = 5; 
     int main() 
     { 
@@ -17,7 +17,7 @@ tags: [c]
     } 
     // 输出是 1994628660 
     // 随机结果 
-
+    
     const int x = 5; 
     int main() 
     { 
@@ -26,7 +26,7 @@ tags: [c]
         return 0; 
     } 
     // 该题输出为 5. 
-	{% endhighlight %}        
+    {% endhighlight %}        
         
 
 这道题主要考查的是C++标准，Point of declaration一节

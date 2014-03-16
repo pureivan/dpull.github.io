@@ -161,7 +161,9 @@ Upgrade Package(升级扩展)。
 但如果你按照上面的方法确实搞不定，可以试试按键盘 Ctrl+~（数字1左边的按键）调出控制台，
 然后拷贝下面的代码进去并回车，它会自动帮你新建文件夹并下载文件的，与上面的方法最终效果是一样的：
 
+    {% highlight pycon %}
 	import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
+    {% endhighlight %}
 
 在命令面板输入 “Package Control: Install
 Package“即会列出全部可以安装的扩展（必需连接网络，如下图），从列表可以看到，4GL、AAAPackageDev

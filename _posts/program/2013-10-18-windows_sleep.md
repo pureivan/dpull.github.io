@@ -8,6 +8,7 @@ tags: [windows]
 ## 问题： ##
 今天博强说我们手游的windows端比端游消耗的cpu都高，用vs的性能分析看了一下其热点在于Sleep函数。
 
+    {% highlight C %}
     // file: cocos2dx/platform/win32/CCApplication.cpp
     if (nNow.QuadPart - nLast.QuadPart > m_nAnimationInterval.QuadPart)
     {
@@ -18,6 +19,7 @@ tags: [windows]
     {
         Sleep(0); 
     }
+    {% endhighlight %}
 
 ----------
 

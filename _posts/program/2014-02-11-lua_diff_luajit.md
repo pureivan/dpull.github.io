@@ -21,13 +21,13 @@ tags: [lua]
 
 ## {...} 不同 ##
 
-	{% highlight Lua %}
-	function test(...)
-		local tb  = {...}
-		print(#tb, unpack(tb))
-	end
-	test("as", nil, 1,2)
-	{% endhighlight %}
+    {% highlight Lua %}
+    function test(...)
+    	local tb  = {...}
+    	print(#tb, unpack(tb))
+    end
+    test("as", nil, 1,2)
+    {% endhighlight %}
 
 lua 输出 
 

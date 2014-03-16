@@ -83,11 +83,13 @@ tags: []
 1. 函数代码行数保持在10行左右，不准写超过20行的函数
 1. 尽量不要函数内嵌函数。
 
-		function Fun1()
-		    local fun2 = function() -- 尽量不要用fun2这种写法 
-		    end
-		    fun2();
-		end
+    {% highlight Lua %}
+    function Fun1()
+        local fun2 = function() -- 尽量不要用fun2这种写法 
+        end
+        fun2();
+    end
+    {% endhighlight %}
 
 ## 历代iPad和iPhone分辨率 ##
 -  iPad 1代、iPad 2代和iPad Mini的分辨率：1024 x 768
