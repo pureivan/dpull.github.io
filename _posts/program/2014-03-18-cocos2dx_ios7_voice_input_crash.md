@@ -1,6 +1,6 @@
 ---
 layout: post
-title: cocos2dx语音输入时闪退（ios7）
+title: 修复ios7下cocos2dx语音输入时闪退
 categories: [general]
 tags: [cococ2dx]
 ---
