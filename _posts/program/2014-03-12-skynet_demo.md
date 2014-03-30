@@ -48,14 +48,14 @@ Skynet是多线程的消息分发系统。
 - 启动和退出
     
     启动要自己扩展守护进程功能么？还是没必要？
-    如何正确的关闭，以便通知各个模块进行存盘。
+    如何正确的关闭，以便通知各个模块进行存盘。？
 
 - 几种address的区别
     
     address 可以理解为handle的变量名，有几种格式：
-    `:name`, name是handle的16进制，一般用于会重复存在的service，如:agent
-    `.name`, name是本进程唯一的，集群内可以有多个。
-    `name`， name是集群内唯一的，（后注册的会覆盖前面注册的）。
+    - `:name`, name是handle的16进制，一般用于会重复存在的service，如:agent
+    - `.name`, name是本进程唯一的，集群内可以有多个。
+    - `name`， name是集群内唯一的，（后注册的会覆盖前面注册的）。
 
 - `skynet.newservice`和`skynet.launch`区别
     
