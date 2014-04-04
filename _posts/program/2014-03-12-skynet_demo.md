@@ -45,13 +45,16 @@ Skynet是多线程的消息分发系统。
 
 ## 问题 ##
 
-- 启动和退出
+- 运维相关
     
     启动要自己扩展守护进程功能么？还是写个程序popen？
-    云风说：使用nohup
+    使用nohup
 
     如何正确的关闭，以便通知各个模块进行存盘？
-    云风blog：[如何安全的退出 skynet](http://blog.codingnow.com/2013/08/exit_skynet.html) 
+    [如何安全的退出 skynet](http://blog.codingnow.com/2013/08/exit_skynet.html) 
+
+    运维控制：
+    参考debug console 把 stdin 改成 listen 一个 port
 
 - 几种address的区别
     
@@ -64,11 +67,11 @@ Skynet是多线程的消息分发系统。
     
     `skynet.newservice` 等同于 `skynet.launch(snlua, lua模块`，并在其退出或出错时，通知创建者。
     
-- skynet.ret 封装的不好。
+- skynet.ret 封装不利于查错
 
     如果不慎调用两次，会出现很难懂的错误日志，不利于查错。
     只接受字符串参数，不支持自动打包。
-    云风说：这两个都是为了兼容老项目而无法改进其封装的形式。
+    云风说这两个都是为了兼容老项目而无法改进其封装的形式。
 
 [acai]: http://github.com/dpull
 [dinghim]: https://github.com/dinghim
