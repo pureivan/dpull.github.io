@@ -35,8 +35,16 @@ Android的调试比较复杂，如果不使用C++代码的调试，可采用如�
 > 第2步可以修改为从终端执行
 > 修改.bash_profile中NDK_ROOT=/Applications/android-ndk（见我的终端设置）， 执行build_native.sh
 
-如果要开启C++代码的调试，可参考[这篇文章](http://www.cocos2d-x.org/wiki/How_to_debug_cocos2d-x_games)，我没有根据教程设置成功。
+如果要开启C++代码的调试
 
+1. 右击项目->点Properties->点击C/C++ Build  在C/C++Build 中的 Build command  的命令后面加上 NDK_DEBUG=1
+1. 右击项目->Debug As->Android Native Application
+
+如果出现 Unknown Application ABI， 使用终端执行ndk-build DUMP_APP_ABI看详细信息
+
+- NDK_MODULE_PATH 问题：cocos2dx、CocosDenshion、extensions、external、cocos2d-x-2.2/cocos2dx/platform/platform/third_party/android/prebuilt中5个（libcurl、libjpeg、libpng、libtiff、libwebp）复制到android-ndk的sources中
+- android:minSdkVersion 问题：修改AndroidManifest.xml 中的<uses-sdkandroid:minSdkVersion="？"/>将？修改为提示的数字（注意api的版本要低于手机的版本）
+- 只有一些info日志，没有出错信息：去.mk中删除相关的info
 
 ## Svn注意事项 ##
 
