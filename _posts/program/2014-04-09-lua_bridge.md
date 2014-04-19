@@ -8,7 +8,7 @@ tags: []
 从去年开始起就一直想做lua桥接Objective-C的事情，原因有二：
 
 1. 不擅长Objective-C。
-2. Objective-C的代码没法子应用内更新。
+2. Objective-C的代码无法实现应用内更新。
 
 
 ## lua桥接Objective-C ##
@@ -90,4 +90,4 @@ ObjC与lua桥接：
     {% endhighlight %}
 
 ## lua桥接jni ##
-还没开始做，研究luajni中。。。
+还没开始做，研究[AndroLua](https://github.com/mkottman/AndroLua)中。。。
