@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《卖个萌仙》开发规范，约定、惯用法
+title: 《天天爱萌仙》开发规范，约定、惯用法
 categories: [general]
 tags: []
 ---

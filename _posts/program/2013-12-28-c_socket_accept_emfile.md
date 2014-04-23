@@ -16,7 +16,7 @@ tags: [socket, epoll]
 ## 为什么连接数会达到本进程设置的上限？ ##
 同样是一套网络库，同样的的压力，《逍遥江湖》为什么不会？
 
-是《卖个萌仙》进程设置上的bug，先getrlimit再setrlimit，setrlimit设置的数值就是系统默认的数值。
+是《天天爱萌仙》进程设置上的bug，先getrlimit再setrlimit，setrlimit设置的数值就是系统默认的数值。
     
     {% highlight C %}
     rlimit  resLimit;
