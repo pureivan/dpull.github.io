@@ -39,7 +39,3 @@ tags: []
 > 维持最低限度的堆分配，并且永不在紧凑循环中使用堆分配。
 对于多进程单线程的服务器架构，测试结果是影响不大。
 对于单进程多线程的服务器架构，大都采用jemalloc。
-
-## Unicode ##
-作者推荐了[The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](http://www.joelonsoftware.com/articles/Unicode.html)
-中文版 [每個軟體開發者都絕對一定要會的Unicode及字元集必備知識(沒有藉口！)](http://local.joelonsoftware.com/wiki/The_Joel_on_Software_Translation_Project:%E8%90%AC%E5%9C%8B%E7%A2%BC)
