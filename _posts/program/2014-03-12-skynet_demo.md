@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 简单试用Skynet
+title: 试用Skynet
 categories: [general]
 tags: [c]
 ---
@@ -32,9 +32,6 @@ skynet存在以下优点：
 
 总而言之，使用skynet是突破我们固有思路的一个尝试，好处多于坏处。
 
-## 目标 ##
-我和[dinghim]抽一些非工作时间，将现有手游的服务端的部分功能使用skynet驱动起来，实现与客户端完成基本的交互。包括：创建角色，游戏角色登陆，完成简单的游戏功能（探索功能）。
-[计划及进展](https://github.com/dpull/skynet_demo/issues)
 
 ## 简介 ##
 Skynet是多线程的消息分发系统。

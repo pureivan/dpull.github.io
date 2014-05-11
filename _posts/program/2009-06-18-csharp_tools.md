@@ -5,7 +5,7 @@ categories: [general, dotnet]
 tags: [csharp]
 ---
 
-写程序久了，自然就有了自己的秘密兵器，今天就来分享几个常用的C#函数。
+备忘，备忘。
 
 ----------
 
@@ -67,3 +67,29 @@ tags: [csharp]
         }
     }
     {% endhighlight %}
+
+## 二进制协议解析 ##
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    struct PatchFileHeader
+    {
+        public byte byDeleteFile;
+        public byte byInPackage;
+        public Int32 nFileModifyTime;
+        public Int32 uFileNameLen;   // uFileNameLen 的长度包含'\0'
+        public Int32 uFileDataLen;
+
+        public static PatchFileHeader Convert(byte[] bytes, int offset)
+        {
+            int size = Marshal.SizeOf(typeof(PatchFileHeader));
+            if (offset + size > bytes.Length)
+                throw new ArgumentOutOfRangeException("offset");
+
+            unsafe
+            {
+                fixed (byte* pbytes = bytes)
+                {
+                    return (PatchFileHeader)Marshal.PtrToStructure((IntPtr)(pbytes + offset), typeof(PatchFileHeader));
+                }
+            }
+        }
+    }
