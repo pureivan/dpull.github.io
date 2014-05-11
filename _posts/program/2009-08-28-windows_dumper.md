@@ -1,14 +1,16 @@
 ---
 layout: post
-title: Dumper重构总结
+title: Dumper开发总结
 categories: [general]
 tags: [windows]
 ---
 
 ## Dumper是什么？ ##
-Dumper是用来捕获程序的崩溃信息，并将它们发送到指定的服务器，服务器的后台分析程序可以将程序崩溃时的堆栈信息重现出来。Dump还提供一些接口，调用即可创建转储文件并发送到服务器上进行分析。
+Dumper是用来捕获程序的崩溃信息，并将它们发送到指定的服务器，
+服务器的后台分析程序可以将程序崩溃时的堆栈信息重现出来。
+Dump还提供一些接口，调用即可创建转储文件并发送到服务器上进行分析。
 
-Dumper目前应用于剑侠情缘网络版三，月影传说，九天神话等项目。
+Dumper目前用于剑侠情缘网络版三，月影传说，剑侠世界，九天神话等项目。
 
 ----------
 
@@ -22,24 +24,24 @@ Dumper目前应用于剑侠情缘网络版三，月影传说，九天神话等�
 1. 系统蓝屏（下次启动游戏时捕获）
 
 ### Dumper不能捕获哪些程序意外退出？ ###
-1. 被其他进程结束进程（如任务管理器结束进程） 
-1. 栈破坏（如memcpy(sz1,sz2, -100)，这个只能进入向量化异常处理，无法进入结构化异常处理）
+1. 被其他进程结束进程（如:任务管理器结束进程） 
+1. 栈破坏（如memcpy(p1, p2, -100)，这个只能进入向量化异常处理，无法进入结构化异常处理）
 
-
-## Dumper重构经验 ##
-Dumper2.0参考了剑三Dumper(Dumper1.0)、Google的Break_Pad、easymule的宕机处理模块还有毒霸宕机处理的一些机制（这个没源代码）。
-
-### 全局变量什么时候析构 ###
-Dumper有个功能是当程序执行exit等进程退出函数的时候会走宕机处理流程
-（这是其他异常处理模块没有的功能，因为我们的代码规范要求不允许随便在代码中写这种结束本进程的语句），当执行exit函数后，要注意此时Exe模块中的全局对象已经析构了（如果使用dll没问题，此时dll中的还没有析构），也就是所有全局的或者静态的变量都不能用了，Dumper采用了这种机制，如果发现Dumper的全局变量（Dumper采用了单件模式）在析构的前没有执行UnInit则走宕机流程。
+### 如何监控非正常结束 ###
+Dumper有个独有功能是当程序执行exit等进程退出函数的时候会走宕机处理流程，
+它的原理是：
+当执行exit函数后，此时Exe模块中的全局对象已经析构了（dll模块还没），
+Dumper采用了这种机制，如果发现Dumper的单例在析构函数执行前没有执行UnInit则认为进程非正常结束。
 
 ### 某些时候只有一个线程可用 ###
 在执行exit可以注册一个回调函数(由atexit添加)，
 当执行这个回调的时候要注意此时只有一个线程可用，其他的线程都被挂起。
-（_lockexit的注释
-`Makes sure only one thread is in the exit code at a time. 
-If a thread is already in the exit code, it must be allowed to continue. 
-All other threads must pend.`）
+
+> _lockexit的注释
+> 
+> Makes sure only one thread is in the exit code at a time. 
+> If a thread is already in the exit code, it must be allowed to continue. 
+> All other threads must pend.
 
 在执行FreeLibrary的时候线程退出会停在ExitThread函数不返回（可以看Windows核心编程（中文版）第五版P529），
 这时候如果等待线程退出就会卡住（在dll中用KThread要注意，如果其析构时调用KThread::Destroy可能会导致线程卡住）。
@@ -52,19 +54,6 @@ All other threads must pend.`）
 最重要的是可以强迫自己去少用全局变量，或者依赖一大坨模块初始化的代码。
 从这儿还有一个感悟，当开发或重构一个功能的时候，这个功能肯定可以做单元测试，
 只是开发者会不会为单元测试作设计罢了。
-
-### 少造轮子 ###
-当需要一个功能的时候，尽可能的想如何用现有的代码解决问题。
-如果不想让第三方的代码和工程代码耦合的太多，可以根据想要的功能，对第三方的代码进行一个简单封装，
-如果第三方的模块不满足需求可以简单修改这个封装就可以。
-
-Dumper中很多路径合并、获取文件名，获取文件所在文件夹之类的操作，
-因为习惯了.NET Framework中的Path类，就根据其接口，
-设计了几个常用的函数，但不想重复造轮子（关键是我没时间），
-故而对用Boost库中的Filesystem库做简单封装，后来考虑到可能会给统一构建带来麻烦，
-所以不想用Boost库了，还不如直接用MFC的CPath类，于是就拿CPath重新实现了Path类，
-因为Path类有足够的单元测试，所以这个重构时间很短，
-因为用Path类对Filesystem库做了简单的封装，这个重构对Dumper没有任何影响。
 
 ## 处理VS2005（VC8）无法捕获的Unhandled exceptions ##
 

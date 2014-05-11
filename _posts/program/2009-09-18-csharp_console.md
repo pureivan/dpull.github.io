@@ -15,8 +15,7 @@ Console.Write 大约写2G字符后就会抛出：
 
 从堆栈上来是System.Text.DBCSCodePageEncoding.GetBytes函数执行出错！所以这个bug并不仅仅影响Console.Write，对于写文本文件(StreamWriter)同样会出现！
 在网上搜索了一下，似乎亚洲字符都有这个问题，Big5
-日文JIS都存在相关的提问，用vs2005和vs2008测试了一下，都存在这个问题.
-
+日文JIS都存在相关的提问，用VS2005和VS2008测试了一下，都存在这个问题.
 
 ----------
 

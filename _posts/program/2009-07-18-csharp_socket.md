@@ -20,7 +20,7 @@ tags: [csharp, socket]
 
 ## Socket.Connected 不是当前的Socket状态 ##
 
-> **MSDN原文：**
+> **MSDN：**
 > 获取一个值，该值指示 Socket 是在上次 Send 还是 Receive 操作时连接到远程主机。 
 >     
 > **应当如何解决呢？**
@@ -28,8 +28,11 @@ tags: [csharp, socket]
 
 ## 要用Socket.Poll判断是否可以接收，不要用Socket.Available ##
 虽然Socket.Available可以偷窥到当前Recv缓冲区字节数，而且Available是Poll速度的两倍，但是
-**MSDN说到：** 如果远程主机使用 Shutdown 方法关闭了 Socket
-连接，并且所有可用数据均已收到，则 Receive 方法将立即完成并返回零字节。
+
+> **MSDN：** 
+> 如果远程主机使用 Shutdown 方法关闭了 Socket
+> 连接，并且所有可用数据均已收到，则 Receive 方法将立即完成并返回零字节。
+
 所以当网络断开的时候单纯使用Socket.Available判断是否recv到数据会存在不知道客户端已经断开Bug
 
 **补充：**
