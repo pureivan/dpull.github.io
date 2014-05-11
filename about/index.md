@@ -36,13 +36,13 @@ title: Resume
 在csdn blog开博
 
 ### 2009.03.28 ###
-使用WordPress将blog迁移到自己的空间
+使用Wordpress将blog迁移到自己的空间
 
 ### 2011.11.18 ###
 使用reStructuredText将blog迁移到[Google App Engine]
 
 ### 2014.01.20 ###
-使用markdown将blog迁移到[Github]
+使用Markdown将blog迁移到[Github]
 
 [Google App Engine]: https://appengine.google.com
 [Github]: https://github.com/
