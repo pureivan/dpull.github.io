@@ -10,7 +10,7 @@ markdown: redcarpet
 markdown_ext: md
 redcarpet:
 #  extensions: ["tables", "fenced_code_blocks", "disable_indented_code_blocks", "space_after_headers", "with_toc_data"]
-  extensions: ["tables"]
+  extensions: ["tables", "fenced_code_blocks", "disable_indented_code_blocks"]
 
 #excerpt_separator: <!--more--> 
 excerpt_separator: ----------
