@@ -153,8 +153,8 @@ html, body {
 
 html {
   font-size: 62.5%;
-  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   line-height: 1.6875;
   color: #222222;
   background: #ecf0f1; }
@@ -177,7 +177,11 @@ body {
   .module p, .post h1 p {
     margin: 0; }
   .module a, .post h1 a {
-    color: #34302d; }
+    color: #34302d;
+    text-decoration: underline; }
+
+img, canvas, iframe, video, svg {
+  max-width: 100%; }
 
 ::selection {
   background: #86c543;
@@ -238,18 +242,22 @@ body {
     margin-left: 32px;
     margin-left: 3.2rem; }
 
+.me {
+  margin-bottom: 20px;
+  margin-bottom: 2rem; }
+
 .site-header ul {
   margin-left: 0; }
 .site-header a {
   color: #34302d; }
+.site-header a:hover {
+  text-decoration: none; }
 
 .site-title {
   font-size: 46px;
   font-size: 4.6rem;
   font-family: 'Oswald', sans-serif;
   padding: 0; }
-  .site-title a {
-    text-decoration: none; }
 
 .social {
   list-style: none;
@@ -260,8 +268,6 @@ body {
     padding-right: 1rem; }
     .social li:last-child {
       padding-right: 0; }
-  .social a {
-    text-decoration: none; }
   .social i {
     font-size: 30px;
     font-size: 3rem;
@@ -278,16 +284,11 @@ body {
 .about {
   margin: 0;
   font-size: 16px;
-  font-size: 1.6rem;
-  padding-bottom: 20px;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #34302d; }
+  font-size: 1.6rem; }
 
 .site-nav ul {
   list-style: none;
-  margin: 0;
-  padding-top: 20px;
-  padding-top: 2rem; }
+  margin: 0; }
   @media only screen and (max-width: 640px) {
     .site-nav ul {
       text-align: center; } }
@@ -305,8 +306,8 @@ body {
     .site-nav li {
       display: block;
       margin-right: 0;
-      margin-bottom: 5px;
-      margin-bottom: 0.5rem; } }
+      margin-bottom: 10px;
+      margin-bottom: 1rem; } }
 @media only screen and (max-width: 640px) {
   .site-nav .search {
     display: block;
@@ -317,6 +318,10 @@ body {
 .search-form .fa-search {
   font-size: 20px;
   font-size: 2rem;
+  cursor: pointer; }
+
+.search-form .search-container {
+  display: inline-block;
   cursor: pointer; }
 
 .search-field {
@@ -368,7 +373,11 @@ h4 {
   font-size: 2.4rem; }
 
 a {
-  color: #222222; }
+  text-decoration: none;
+  color: #86c543; }
+
+a:hover {
+  text-decoration: underline; }
 
 .button {
   text-decoration: none;
@@ -400,6 +409,9 @@ footer p {
   font-size: 18px;
   font-size: 1.8rem; }
 
+footer a {
+  text-decoration: underline; }
+
 .posts {
   margin: 0;
   list-style: none; }
@@ -407,6 +419,9 @@ footer p {
 .posts li {
   padding: 16px 0;
   padding: 1.6rem 0; }
+
+.posts li a {
+  color: #222222; }
 
 figure {
   margin: 16px 0;
@@ -441,6 +456,11 @@ blockquote {
 #disqus_thread {
   margin-top: 60px;
   margin-top: 6rem; }
+
+.spotify {
+  margin: 30px 0;
+  margin: 3rem 0;
+  text-align: center; }
 
 .codepen {
   margin-bottom: 16px;

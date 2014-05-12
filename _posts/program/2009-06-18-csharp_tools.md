@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 自备C#辅助函数
+title: C#工具箱
 categories: [general, dotnet]
 tags: [csharp]
 ---
