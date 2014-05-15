@@ -200,7 +200,7 @@ img, canvas, iframe, video, svg {
   height: 100%;
   padding: 32px;
   padding: 3.2rem; }
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 770px) {
     .site-header {
       float: none;
       text-align: center;
@@ -213,7 +213,7 @@ img, canvas, iframe, video, svg {
   padding: 32px;
   padding: 3.2rem;
   overflow: auto; }
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 770px) {
     .wrapper {
       margin-left: 0;
       overflow: inherit; } }
