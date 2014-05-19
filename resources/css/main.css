@@ -289,7 +289,7 @@ img, canvas, iframe, video, svg {
 .site-nav ul {
   list-style: none;
   margin: 0; }
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 770px) {
     .site-nav ul {
       text-align: center; } }
 .site-nav li {
@@ -297,7 +297,7 @@ img, canvas, iframe, video, svg {
   margin-bottom: 0.5rem; }
   .site-nav li:last-child {
     margin-bottom: 0; }
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 770px) {
     .site-nav li {
       display: inline-block;
       margin: 0 10px 0 0;
@@ -308,7 +308,7 @@ img, canvas, iframe, video, svg {
       margin-right: 0;
       margin-bottom: 10px;
       margin-bottom: 1rem; } }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 770px) {
   .site-nav .search {
     display: block;
     margin-right: 0;
@@ -343,7 +343,7 @@ img, canvas, iframe, video, svg {
   margin-bottom: 0;
   margin-left: 32px;
   margin-left: 3.2rem; }
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 770px) {
     .search-results ol {
       list-style-position: inside !important;
       margin-left: 0; } }
