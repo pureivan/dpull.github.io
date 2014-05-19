@@ -302,7 +302,7 @@ img, canvas, iframe, video, svg {
       display: inline-block;
       margin: 0 10px 0 0;
       margin: 0 1rem 0 0; } }
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 310px) {
     .site-nav li {
       display: block;
       margin-right: 0;

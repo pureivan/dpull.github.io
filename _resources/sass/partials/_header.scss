@@ -80,7 +80,7 @@
         list-style: none;
         margin: 0;
 
-        @media only screen and (max-width: 770px) {
+        @media only screen and (max-width: $nav-layout-maxwidth) {
             text-align: center;
         }
     }
@@ -93,13 +93,13 @@
             margin-bottom: 0;
         }
 
-        @media only screen and (max-width: 770px) {
+        @media only screen and (max-width: $nav-layout-maxwidth) {
             display: inline-block;
             margin: 0 10px 0 0;
             margin: 0 1rem 0 0;
         }
 
-        @media only screen and (max-width: 560px) {
+        @media only screen and (max-width: $nav-layout-minwidth) {
             display: block;
             margin-right: 0;
             margin-bottom: 10px;
@@ -108,7 +108,7 @@
     }
 
     .search {
-        @media only screen and (max-width: 770px) {
+        @media only screen and (max-width: $nav-layout-maxwidth) {
             display: block;
             margin-right: 0;
             margin-top: 5px;
@@ -150,7 +150,7 @@
     margin-bottom: 0;
     margin-left: 32px;
     margin-left: 3.2rem;
-    @media only screen and (max-width: 770px) {
+    @media only screen and (max-width: $nav-layout-maxwidth) {
         list-style-position: inside !important;
         margin-left: 0;
     }

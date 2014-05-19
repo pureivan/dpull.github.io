@@ -8,7 +8,7 @@
     padding: 32px;
     padding: 3.2rem;
 
-    @media only screen and (max-width: 770px) {
+    @media only screen and (max-width: $nav-layout-maxwidth) {
         float: none;
         text-align: center;
         height: auto;
@@ -23,7 +23,7 @@
     padding: 3.2rem;
     overflow: auto;
 
-    @media only screen and (max-width: 770px) {
+    @media only screen and (max-width: $nav-layout-maxwidth) {
         margin-left: 0;
         overflow: inherit;
     }
