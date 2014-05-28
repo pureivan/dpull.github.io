@@ -7,21 +7,21 @@ tags: [cocos2dx]
 
 > 本帖持续更新
 
-# cocos2dx的触摸响应的机制调整 #
+## cocos2dx的触摸响应的机制调整 ##
 
 cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，在制作过程中带来的麻烦远大于这套机制带来的好处，所以将其重载，调整为按照**树形结构遍历**。
 
-# 增加extensions库的ios proj #
+## 增加extensions库的ios proj ##
 
 类似于其他模块，增加extensions的ios proj
 
-# CCB关键帧回调由SEL_CallFuncN改为CCCallFunc #
+## CCB关键帧回调由SEL_CallFuncN改为CCCallFunc ##
 
 为了做lua关键帧回调的支持而做的这个改动。
 
 和[James Chen]聊了一下，他建议改为`SEL_CallFuncND`，但我认为`SEL_CallFuncND`是不安全的，所以不提交改动了。
 
-# Issues #
+## Issues ##
 1. 修复ccb动画管理器空指针访问（已合并）
 1. 子ccb锚点位置（已合并）
 1. 修复 子节点初始隐藏然后显示，顺序错乱的bug
@@ -36,13 +36,13 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
 3.0命名规范改动很大，[James Chen]建议我把改动合到3.0分支，
 但我这一段忙着出公司内测版本，先放放吧。
 
-# 增加CCB调试日志，减少宕掉 #
+## 增加CCB调试日志，减少宕掉 ##
 开发过程中，经常出现缺图等问题，修改为记录log，而非直接宕掉。
 
-# 将CCB中的图片加载改为异步加载 #
+## 将CCB中的图片加载改为异步加载 ##
 主要是优化性能，详见 [cocos2d性能优化--CCB加载优化](../cocos2dx_ccbreader_optimize/)
 
-# windows版CPU占用高 #
+## windows版CPU占用高 ##
 2013/12/02
 
 今天博强说我们手游的windows端比端游消耗的cpu都高，用VS的性能分析看了一下其热点在于Sleep函数。
@@ -72,7 +72,7 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
 
 **PS:** 以前剑三做过一个测试，dwMilliseconds小于10和10没有区别。
 
-# 修复客户端顿卡时，战斗可能卡住的问题 #
+## 修复客户端顿卡时，战斗可能卡住的问题 ##
 2014/03/01
 
 我们战斗是通过ccb的关键帧触发的，在顿卡时，Action会执行的比较混乱，
@@ -80,14 +80,14 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
 修改方式：
 CCActionManager::update会根据间隔时间，执行多次
 
-# 修复ios7下cocos2dx语音输入时闪退 #
+## 修复ios7下cocos2dx语音输入时闪退 ##
 2014/03/18
 
 测试报了一个bug，CCEditBox使用语音输入闪退，原以为是CCEditBox的问题，调试后发现没那么简单，查看cocos2dx提交记录，原来3.0分支已经在25天前（2014.02.19）解决了，遗憾的是2014.03.15发布的v2.2.3并没有修复这个问题。
 
 根据3.x分支的改动，将其移植到了2.x分支，[查看改动](https://github.com/cocos2d/cocos2d-x/pull/5861/files)
 
-# CCLabelTTF 描边/勾边 问题 #
+## CCLabelTTF 描边/勾边 问题 ##
 2014/05/27
 
 1. CCLabelTTF 的勾边 是内勾边，不满足ui外勾边的需求。 
