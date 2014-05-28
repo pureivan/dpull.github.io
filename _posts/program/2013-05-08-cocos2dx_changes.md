@@ -13,7 +13,7 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
 
 # 增加extensions库的ios proj #
 
-不知道为何，没有提供extensions库的ios proj，所有的示例都是全包进来的，不怕麻烦么？
+类似于其他模块，增加extensions的ios proj
 
 # CCB关键帧回调由SEL_CallFuncN改为CCCallFunc #
 
@@ -40,7 +40,7 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
 开发过程中，经常出现缺图等问题，修改为记录log，而非直接宕掉。
 
 # 将CCB中的图片加载改为异步加载 #
-主要是优化性能，详见 [cocos2d性能优化--CCB加载优化](./blog/2013-09-08-cocos2dx_ccbreader_optimize.md)
+主要是优化性能，详见 [cocos2d性能优化--CCB加载优化](./blog/cocos2dx_ccbreader_optimize.md)
 
 # windows版本CPU占用高 #
 2013/12/02
