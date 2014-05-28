@@ -19,7 +19,7 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
 
 为了做lua关键帧回调的支持而做的这个改动。
 
-和[James Chen]聊了一下，他建议改为SEL_CallFuncND，但我认为SEL_CallFuncND是不安全的，所以不pull request了。
+和[James Chen]聊了一下，他建议改为`SEL_CallFuncND`，但我认为`SEL_CallFuncND`是不安全的，所以不提交改动了。
 
 # Issues #
 1. 修复ccb动画管理器空指针访问（已合并）
@@ -40,9 +40,9 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
 开发过程中，经常出现缺图等问题，修改为记录log，而非直接宕掉。
 
 # 将CCB中的图片加载改为异步加载 #
-主要是优化性能，详见 [cocos2d性能优化--CCB加载优化](./blog/cocos2dx_ccbreader_optimize.md)
+主要是优化性能，详见 [cocos2d性能优化--CCB加载优化](./blog/cocos2dx_ccbreader_optimize/)
 
-# windows版本CPU占用高 #
+# windows版CPU占用高 #
 2013/12/02
 
 今天博强说我们手游的windows端比端游消耗的cpu都高，用VS的性能分析看了一下其热点在于Sleep函数。
@@ -61,14 +61,16 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
     {% endhighlight %}
 
 
-问题的原因就在于这个Sleep(0)， [MSDN中](http://msdn.microsoft.com/en-us/library/windows/desktop/ms686298(v=vs.85).aspx):
+问题的原因就在于这个Sleep(0)， [MSDN](http://msdn.microsoft.com/en-us/library/windows/desktop/ms686298\(v=vs.85\).aspx) 中:
 
 > A value of zero causes the thread to relinquish the remainder of its
 > time slice to any other thread that is ready to run. If there are no
 > other threads ready to run, the function returns immediately, and the
 > thread continues execution.
 
-修改为Sleep(10)就好了，PS: 以前剑三做过一个测试，dwMilliseconds小于10和10没有区别。
+修改为Sleep(10)就好了。
+
+**PS:** 以前剑三做过一个测试，dwMilliseconds小于10和10没有区别。
 
 # 修复客户端顿卡时，战斗可能卡住的问题 #
 2014/03/01
