@@ -40,7 +40,7 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
 开发过程中，经常出现缺图等问题，修改为记录log，而非直接宕掉。
 
 # 将CCB中的图片加载改为异步加载 #
-主要是优化性能，详见 [cocos2d性能优化--CCB加载优化](./blog/cocos2dx_ccbreader_optimize/)
+主要是优化性能，详见 [cocos2d性能优化--CCB加载优化](../cocos2dx_ccbreader_optimize/)
 
 # windows版CPU占用高 #
 2013/12/02
