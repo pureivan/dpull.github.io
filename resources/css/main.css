@@ -153,7 +153,7 @@ html, body {
 
 html {
   font-size: 62.5%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: 400;
   line-height: 1.6875;
   color: #222222;
@@ -256,7 +256,7 @@ img, canvas, iframe, video, svg {
 .site-title {
   font-size: 46px;
   font-size: 4.6rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   padding: 0; }
 
 .social {
