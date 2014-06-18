@@ -118,6 +118,17 @@ CCActionManager::update会根据间隔时间，执行多次
     CGContextSetTextDrawingMode(context, kCGTextFill);
     {% endhighlight %}
 
+## Win8支持 ##
+2014/06/18
+
+- webp支持
+- Editbox光标不正确的问题
+- 背景音乐问题
+- webview问题
+- 打包问题
+- 资源更新问题
+
+
 [James Chen]: https://github.com/dumganhar
 
 

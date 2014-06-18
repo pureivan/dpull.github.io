@@ -1,6 +1,6 @@
 ---
 layout: post
-title: cocos2d性能优化--CCB加载优化
+title: cocos2dx性能优化--CCB加载优化
 categories: [general, cocos2dx]
 tags: [cocos2dx]
 ---
