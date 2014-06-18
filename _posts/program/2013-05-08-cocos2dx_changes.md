@@ -39,8 +39,10 @@ cocos2dx默认的触摸响应机制效率看似高但使用起来太过复杂，
 ## 增加CCB调试日志，减少宕掉 ##
 开发过程中，经常出现缺图等问题，修改为记录log，而非直接宕掉。
 
-## 将CCB中的图片加载改为异步加载 ##
+## 图片异步加载排重以及将CCB中的图片加载改为异步加载 ##
 主要是优化性能，详见 [cocos2d性能优化--CCB加载优化](../cocos2dx_ccbreader_optimize/)
+
+其默认的图片多线程加载排重没有除去后台线程正在加载中的文件，导致文件可能被加载多次。
 
 ## windows版CPU占用高 ##
 2013/12/02
@@ -121,7 +123,9 @@ CCActionManager::update会根据间隔时间，执行多次
 ## Win8支持 ##
 2014/06/18
 
-- webp支持
+- webp支持 
+    - [代码](https://github.com/cocos2d/cocos2d-x/pull/7124/files)  
+    - [第三方库](https://github.com/cocos2d/cocos2d-x-3rd-party-libs-bin/pull/11/files)
 - Editbox光标不正确的问题
 - 背景音乐问题
 - webview问题
