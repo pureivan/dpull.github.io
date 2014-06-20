@@ -123,12 +123,20 @@ CCActionManager::update会根据间隔时间，执行多次
 ## Win8支持 ##
 2014/06/18
 
-- webp支持 
+- 背景音乐、音效问题
+    - 将MP3转成wav。
+ 
+- Webp支持 
     - [代码](https://github.com/cocos2d/cocos2d-x/pull/7124/files)  
     - [第三方库](https://github.com/cocos2d/cocos2d-x-3rd-party-libs-bin/pull/11/files)
-- Editbox光标不正确的问题
-- 背景音乐问题
-- webview问题
+
+- TTF字体问题
+    - 放在fonts/下面
+    
+- 内存问题
+    - 不支持512M的机器
+    
+- WebView问题
 - 打包问题
 - 资源更新问题
 
