@@ -131,14 +131,16 @@ CCActionManager::update会根据间隔时间，执行多次
     - [第三方库](https://github.com/cocos2d/cocos2d-x-3rd-party-libs-bin/pull/11/files)
 
 - TTF字体问题
-    - 放在fonts/下面
+    - 位置放在fonts/下面
+    - （尚未解决）字体排版问题
     
 - 内存问题
     - 不支持512M的机器
     
-- WebView问题
-- 打包问题
+- WebView问题（尚未解决）
+- 打包问题（尚未解决）
 - 资源更新问题
+- 高分辨率的锯齿问题
 
 
 [James Chen]: https://github.com/dumganhar
