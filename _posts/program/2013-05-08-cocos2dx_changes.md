@@ -140,7 +140,7 @@ CCActionManager::update会根据间隔时间，执行多次
 - WebView问题（尚未解决）
 - 打包问题（尚未解决）
 - 资源更新问题
-- 高分辨率的锯齿问题
+- 高分辨率的锯齿问题（尚未解决）
 
 
 [James Chen]: https://github.com/dumganhar
