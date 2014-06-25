@@ -222,3 +222,47 @@ System;前面。
         MarshalString_A(sSource, szDest, nDestSize);#endif    
     }
     {% endhighlight %}
+
+# Windows Phone8相关 #
+2014/06/25
+
+手游时代来临，这一在游戏行业看似鸡肋的技术又有了用武之地。使用了Windows Runtime (WinRT) 的新api，编译选项变为了 /ZW， 它和/clr 并不完全兼容（[详情](http://msdn.microsoft.com/en-us/magazine/jj651569.aspx)），我感受到的几点：
+
+1. /clr 的 gcnew 变为了 /ZW 的 ref new
+1. System::String 变为了 Platform::String
+1. UI控件在Platform下没有了，必须写写C#代码了
+1. 不能继承C++.net的类了，不过可以用接口或者委托，下面有个委托的示例
+    
+C++代码
+
+    {% highlight C++ %}
+	public interface class  XWebViewBase
+	{
+		void Navigate(Platform::String^ url);
+	};
+
+	public ref class XWebViewBaseBridge sealed
+	{
+	public:
+		static void SetInstance(XWebViewBase^ instance)
+		{
+			m_WebViewBase = instance;
+		}
+
+		static XWebViewBase^ GetInstance()
+		{
+			return m_WebViewBase;
+		}
+
+	private:
+		property static XWebViewBase^ m_WebViewBase;
+	};
+    {% endhighlight %}
+
+C#代码
+    public class XWebView : XWebViewBase
+    {
+        public void Navigate(string url)
+        {
+        }
+    }
