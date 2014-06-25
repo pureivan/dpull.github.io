@@ -231,7 +231,7 @@ System;前面。
 1. /clr 的 gcnew 变为了 /ZW 的 ref new
 1. System::String 变为了 Platform::String
 1. UI控件在Platform下没有了，必须写写C#代码了
-1. 不能继承C++.net的类了，不过可以用接口或者委托，下面有个委托的示例
+1. 不能继承C++.net的类了，不过可以用接口或者委托，下面有个接口的示例
     
 C++代码
 
