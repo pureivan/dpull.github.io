@@ -260,9 +260,12 @@ C++代码
     {% endhighlight %}
 
 C#代码
+
+    {% highlight C# %}
     public class XWebView : XWebViewBase
     {
         public void Navigate(string url)
         {
         }
     }
+    {% endhighlight %}
