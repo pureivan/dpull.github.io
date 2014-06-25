@@ -130,9 +130,9 @@ CCActionManager::update会根据间隔时间，执行多次
     - [代码](https://github.com/cocos2d/cocos2d-x/pull/7124/files)  
     - [第三方库](https://github.com/cocos2d/cocos2d-x-3rd-party-libs-bin/pull/11/files)
 
-- TTF字体问题
-    - 位置放在fonts/下面
-    - （尚未解决）字体排版问题
+- TTF字体排版问题
+   
+    重写FT_Error CCFreeTypeFont::initGlyphs(const char* text)即可，默认按英文单词排的，也就是查英文空格，重写这个函数即可
     
 - 内存问题
     - 不支持512M的机器
