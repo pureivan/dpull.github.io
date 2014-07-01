@@ -67,12 +67,13 @@ address 可以理解为handle的变量名，有几种格式：
 和`skynet.call`配合使用。
 需要注意的是：
 
-- 只能调用一次，调用两次会出现很难懂的错误日志；
-- 和`skynet.call`不同的是，`skynet.ret`不支持自动打包；
+1. 只能调用一次，调用两次会出现很难懂的错误日志；
+1. 和`skynet.call`不同的是，`skynet.ret`不支持自动打包；
 
 云风说这两个都是为了兼容老项目而无法改进其封装的形式。
 
-## `skynet.exit` ##
+## `skynet.exit` 和 `skynet.kill` ##
+直接调用exit或者kill都是关闭掉snlua服务，`snax.kill`的做法是向指定服务发送命令，然后该服务调用服务内的函数后执行`skynet.exit`，可用类似的方式设计服务器关闭流程。
  
 ## `skynet.fork` ##
 ## `skynet.timeout` ##
