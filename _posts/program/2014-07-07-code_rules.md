@@ -14,9 +14,9 @@ tags: []
 
 1. 作用域小于或者等于当前函数的变量使用camelCasing规则命名
 1. 作用域大于当前函数的变量使用PascalCasing规则命名
-1. 不适用前缀
+1. 不使用X前缀
 
-C#示例
+> C#示例
 
     标识符  				| 类型				| 例子
     ---  			 	| --- 				| ---
@@ -26,7 +26,7 @@ C#示例
     函数           	    | PascalCasing     	| void **SetLevel** (int level)
     函数参数         	| camelCasing      	| void SetLevel(int **level**)
 
-lua示例
+> lua示例
 
     标识符  				| 类型				| 例子
     ---  			 	| --- 				| ---
